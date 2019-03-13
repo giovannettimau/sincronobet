@@ -1,0 +1,159 @@
+@charset "ISO-8859-1";
+
+body, html{
+	height: 100%;
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.formclass {
+	border: 3px solid #f1f1f1;
+	
+}
+
+.inputtext{
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.buttonlogin {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  float: right;
+  cursor: pointer;
+  width: 10%;
+}
+
+.altributton {
+  background-color: #e63900;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  float: left;
+  cursor: pointer;
+  width: 10%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+.bg{
+	background-image: url(http://www.top10list.cz/wp-content/uploads/2012/03/feature1.jpg);
+	height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.bglogin{
+	background-image: url(http://www.sportmanagement.it/thiene/wp-content/uploads/sites/24/2018/11/sport-per-tutti.jpg);
+	height: 70%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.bgadmin{
+	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB_j3Zu8llRWx9uDkrXNyA_VZJKckDaOn9-Inld9akagoSQOn9vA);
+	height: 70%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.disc{
+	background-image: url(../IMG/gioca.jpg);
+	background-position:right;
+	background-size: 30px;
+}
+
+
+ul {
+  width: 40%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #4CAF50;
+  position: absolute;
+  right: 29%;
+  border-radius: 10px;
+  
+}
+
+li {
+  width: 33.3%;
+  float: left;
+  
+}
+
+.b1{
+	background-color:#4CAF50;
+	border-radius: 5px;
+	color:white;
+	text-align:center;
+	display: inline-block;
+	cursor: pointer;
+	font-size: 14px;
+	text-decoration: none;
+	padding: 2% 27%;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+table {
+	
+	background-color:white;
+	border: 1px solid black;
+	align: center;
+	margin-top: 10%;
+	color: black;
+	margin-left: auto;
+	margin-right: auto;
+	
+	
+}
+
+.tablematch{
+	text-align:center;
+	font-size: 14px;
+}
+
+th, td {
+	
+	border: 1px solid black;
+}
+
+a.link_basso:hover{
+	color: white;
+}
+
