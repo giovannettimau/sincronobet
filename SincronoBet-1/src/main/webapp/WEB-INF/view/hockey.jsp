@@ -30,11 +30,11 @@
 		
 	<td>
 	
-	<c:if test="${not empty utente}">
+	<c:if test="${not empty giocatore}">
 		<a class="b1" href="riepilogo">Scommetti</a>
 		
 	</c:if>
-	<c:if test="${empty utente}">
+	<c:if test="${empty giocatore}">
 		<a class="b1" href="loginutente">Login</a>
 </c:if>
 

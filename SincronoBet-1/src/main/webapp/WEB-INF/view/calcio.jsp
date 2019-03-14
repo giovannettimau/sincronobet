@@ -39,7 +39,21 @@
 	<td>
 	
 	<c:if test="${not empty giocatore}">
-		<a class="b1" href="riepilogo">Scommetti</a>
+	<form action="scalcio1" id=${ x.quota1 } method="get"> 
+	<input form= ${ x.quota1} type="hidden" name="prova1" value=${ x.quota1}>
+	<input form= ${ x.quota1 } type="hidden" name="prova1id" value=${ x.id}>
+		<button form=${ x.quota1 } type="submit" > ${x.quota1}</button>
+		</form>
+		<form action="scalcio2" id=${ x.quota2} method="get"> 
+		<input form= ${ x.quota2 } type="hidden" name="prova2" value=${ x.quota2}>
+		<input form= ${ x.quota2 } type="hidden" name="prova2id" value=${ x.id}>
+		<button form=${ x.quota2 } type="submit" > ${x.quota2}</button>
+		</form>
+			<form action="scalciox" id=${ x.quotax } method="get"> 
+	<input form= ${ x.quotax } type="hidden" name="provax" value=${ x.quotax}>
+		<input form= ${ x.quotax} type="hidden" name="provaxid" value=${ x.id}>
+		<button form=${ x.quotax} type="submit" > ${x.quotax}</button>
+		</form>
 		
 	</c:if>
 	<c:if test="${empty giocatore}">
@@ -51,10 +65,12 @@
 	</td>
 	
 	</tr>
+	
+	
 </c:forEach>
-
-
-
+<a href="risultati">Riepilogo giocata</a>
+<a href="hockey">Hockey</a>
+<a href="basket">Basket</a>
 </table>
 </body>
 </html>

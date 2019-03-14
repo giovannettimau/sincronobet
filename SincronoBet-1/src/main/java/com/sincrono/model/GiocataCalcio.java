@@ -27,6 +27,4 @@ public class GiocataCalcio {
 	private int storicogiocate;
 	@Column(name="risultato_scommesso")
 	private String risultato;
-	
-
 }
