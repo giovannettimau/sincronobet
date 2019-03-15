@@ -6,24 +6,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+
 <link href="../CSS/style.css" rel="stylesheet" type="text/css">
 <meta charset="ISO-8859-1">
 <title>Eventi sportivi CALCIO</title>
 </head>
-<body style = "background-image: url(https://www.capebretonpost.com/media/photologue/photos/cache/soccer-thinkstock-copy_large.jpg); background-repeat: no-repeat; background-size: cover">
-<!-- body style = "background-image: url(https://i.pinimg.com/originals/83/f2/88/83f2883149edce89779ee4090b940870.jpg); background-repeat: no-repeat; background-size: cover" -->
+<body id = "pagecalcio" class = "img-fluid">
+<div  class="container mar-top-0">
 
-
-<table class="tablematch">
-	<tr>
-		<td><b>partite</b></td>
-		<td><b>squadraA</b></td>
-		<td><b>squadraB</b></td>
-		<td><b>quota1</b></td>
-		<td><b>quotaX</b></td>
-		<td><b>quota2</b></td>
-		<td><b>operazione</b></td>
-	</tr>
+<div class="container p-3">
+<table class="table-bordered table-striped" style ="margin: auto;">
+	<thead class="table-light">
+		<tr>
+			<th class="text-center"><b>partite</b></th>
+			<th class="text-center"><b>squadraA</b></th>
+			<th class="text-center"><b>squadraB</b></th>
+			<th class="text-center"><b>quota1</b></th>
+			<th class="text-center"><b>quotaX</b></th>
+			<th class="text-center"><b>quota2</b></th>
+			<th class="text-center"><b>operazione</b></th>
+		</tr>
+	</thead>
 <c:forEach items="${att}" var="x">
 
 	 
@@ -36,14 +43,14 @@
 		<td>${x.quotax}</td>
 		<td>${x.quota2}</td>
 		
-	<td>
+	<td style = "text-align: center;">
 	
 	<c:if test="${not empty giocatore}">
-		<a class="b1" href="riepilogo">Scommetti</a>
+		<a class="btn btn-success btn-sm" style = "width:100%;" href="riepilogo">Scommetti</a>
 		
 	</c:if>
 	<c:if test="${empty giocatore}">
-		<a class="b1" href="loginutente">Login</a>
+		<a class="btn btn-success btn-sm" style = "width:100%;" href="loginutente">Login</a>
 	   	
 		
 	</c:if>
@@ -56,5 +63,7 @@
 
 
 </table>
+</div>
+</div>
 </body>
 </html>

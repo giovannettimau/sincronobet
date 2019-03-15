@@ -22,7 +22,7 @@ public class Login  {
 		String msg;
 		Customer c= as.findByemail(a);
 		if(c==null) {
-			msg="email sbagliata";
+			msg="Email errata";
 			s.addAttribute("cus", msg);
 			return "loginutente";
 		}
@@ -32,14 +32,10 @@ public class Login  {
 			return "index";	
 		}
 		else {
-			msg="psw sbagliata no bravo";
+			msg="Password errata";
 			s.addAttribute("cus", msg);
 			return "loginutente";
 		}
-		
-		
-		
-		
 }
 	@RequestMapping(value="/",method = RequestMethod.GET)
 	public String loginRootu(Model model)
@@ -59,7 +55,7 @@ public class Login  {
 		
 		Customer c= as.findByemail(email);
 		if(c!=null) {
-			msg="utente già registrato fai il login";
+			msg="Utente già registrato: effettua il login";
 			v.addAttribute("cus", msg);
 			return "loginutente";	
 		}
@@ -80,7 +76,7 @@ public class Login  {
 	@RequestMapping(value="/loginutente",method = RequestMethod.GET)
 	public String loginRootut(Model model)
 	{
-		model.addAttribute("personForm",new Customer());
+		model.addAttribute("personForm", new Customer());
 	    return "loginutente";
 	}
 }

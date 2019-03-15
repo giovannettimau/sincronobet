@@ -1,5 +1,9 @@
 package com.sincrono.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
@@ -9,9 +13,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sincrono.model.Admin;
 import com.sincrono.model.AdminService;
+import com.sincrono.model.Calcio;
 import com.sincrono.model.Customer;
 import com.sincrono.model.CustomerService;
 import com.sincrono.model.GiocataBasketService;
@@ -41,14 +47,16 @@ public class ControllerAdmin {
 	    return "gestioneadmin";
 	}
 
-	@RequestMapping(path="/provacenoyz",method=RequestMethod.POST)
-	public String getIndex(@ModelAttribute("tenebre") Admin tenebre,@ModelAttribute("csmdelete") Customer csmdelete,Model m,Model s,HttpSession sessionadmin) {
+	@RequestMapping(path="provacenoyz",method=RequestMethod.POST)
+	public String getIndex(@ModelAttribute("tenebre") Admin tenebre,@ModelAttribute("csmdelete") Customer csmdelete,Model s,HttpSession sessionadmin) {
 		String a=tenebre.getEmail();
 		String pass=tenebre.getPassword();
 		String msg;
+		
 		Admin c= nn.findByemail(a);	
 		if(c==null) {
-			msg="email sbagliata";
+			msg="Email errata";
+			
 			s.addAttribute("cus", msg);
 			return "loginadmin";
 		}		
@@ -58,42 +66,51 @@ public class ControllerAdmin {
 			return "gestioneadmin";
 		}
 		else {
-			msg="psw sbagliata no bravo";
+			msg="Password errata";
 		}
 		
 		s.addAttribute("cus", msg);	
 		return "loginadmin";		
 }
 	
-	@RequestMapping(value="login",method = RequestMethod.GET)
+	@RequestMapping(value="loginadmin",method = RequestMethod.GET)
 	public String loginRoot(Model model)
 	{
-		model.addAttribute("tenebre",new Admin());
+		model.addAttribute("tenebre", new Admin());
 	    return "loginadmin";
 	}
+	
 	@Transactional
 	@RequestMapping(value="cancellacsm")
-	public String deletecustomer(@ModelAttribute("csmdelete") Customer csmdelete,Model s,HttpSession sessionprova) { 
+	public String deletecustomer(@ModelAttribute("csmdelete") Customer csmdelete,Model s) { 
 		String a=csmdelete.getEmail();
 		Customer c= as.findByemail(a);
 		int id=c.getCustomer_id();
 		as.deleteByemail(a);
-		String msg="prova";
-		s.addAttribute("cus", msg);	
-		sessionprova.setAttribute("id",id);
+		gcs.deleteBycid(id);
+		gbs.deleteBybid(id);
+		ghs.deleteByhid(id);
+		sgs.deleteBysgid(id);
 		return "gestioneadmin";
 	}
 	
-	@RequestMapping(value="prova")
-	public String prova(@ModelAttribute("csmdelete") Customer csmdelete,HttpSession sessionprova,Model s ) {
-		int id;
-		id=(int)sessionprova.getAttribute("id");	
+	@Transactional
+	@RequestMapping(value="cancellagsg")
+	public String prova(@RequestParam("customer_id") int id, @ModelAttribute("csmdelete") Customer csmdelete, Model s ) {
+		s.addAttribute("customer_id", id);
 		gcs.deleteBycid(id);
 		gbs.deleteBybid(id);
 		ghs.deleteByhid(id);
 		sgs.deleteBysgid(id);
 		return "gestioneadmin";
 		}
+	
+	
+	@RequestMapping(value = "visualizzaUT", method = RequestMethod.GET)
+	public String getList(Model m) {
+	List <Customer> listautenti=as.findAll();
+	m.addAttribute("lista", listautenti);
+	return "gestioneadmin";
 	}
 
-
+}
