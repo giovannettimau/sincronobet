@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 public interface HockeyService extends JpaRepository<Hockey, Integer> {
-
+	Hockey findByid(final int id);
 }

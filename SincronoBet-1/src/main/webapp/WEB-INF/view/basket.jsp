@@ -36,17 +36,35 @@
 	
 	<td>
 	
-	<c:if test="${not empty giocatore}">
-		<a class="b1" href="riepilogo">Scommetti</a>
-		
+		<c:if test="${not empty giocatore}">
+	<form action="sbasket1" id=${ y.quota1 } method="get"> 
+	<input form= ${ y.quota1} type="hidden" name="prova1" value=${ y.quota1}>
+	<input form= ${ y.quota1 } type="hidden" name="prova1id" value=${ y.id}>
+		<button form=${ y.quota1 } type="submit" > ${y.quota1}</button>
+		</form>
+		<form action="sbasket2" id=${ y.quota2} method="get"> 
+		<input form= ${ y.quota2 } type="hidden" name="prova2" value=${ y.quota2}>
+		<input form= ${ y.quota2 } type="hidden" name="prova2id" value=${ y.id}>
+		<button form=${ y.quota2 } type="submit" > ${y.quota2}</button>
+		</form>
 	</c:if>
 	<c:if test="${empty giocatore}">
 		<a class="b1" href="loginutente">Login</a>
-</c:if>
+	   	
+		
+	</c:if>
+
 	</td>
 	
 	</tr>
+	
+	
 </c:forEach>
+<a href="risultati">Riepilogo giocata</a>
+<a href="hockey">Hockey</a>
+<a href="calcio">calcio</a>
+	</tr>
+
 
 
 

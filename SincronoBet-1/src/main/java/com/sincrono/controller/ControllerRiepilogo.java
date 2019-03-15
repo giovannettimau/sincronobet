@@ -16,8 +16,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sincrono.model.Admin;
+import com.sincrono.model.Basket;
+import com.sincrono.model.BasketService;
 import com.sincrono.model.Calcio;
 import com.sincrono.model.CalcioService;
+import com.sincrono.model.Hockey;
+import com.sincrono.model.HockeyService;
 import com.sincrono.model.Riepilogo;
 import com.sincrono.model.Schedina;
 @Controller
@@ -25,6 +29,10 @@ public class ControllerRiepilogo {
 	double quotatotale=1;
 	@Autowired
 	CalcioService gc;
+	@Autowired
+	BasketService gb;
+	@Autowired
+	HockeyService gh;
 	
 	@RequestMapping(value="risultati",method = RequestMethod.GET)
 	public String loginRoot(ModelMap model,Model pol,HttpSession risultati,HttpSession risultatip)
@@ -38,9 +46,24 @@ public class ControllerRiepilogo {
 		for(int j=0;j<nuova.size();j++) {
 			Riepilogo uno=new Riepilogo();
 			int ids=nuova.get(j).getId();
+			String sport=nuova.get(j).getTiposport();
+			if(sport.equals("calcio")) {
 			Calcio s=gc.findByid(ids);
 			uno.setSquadraA(s.getSquadraA());
 			uno.setSquadraB(s.getSquadraB());
+			}
+			else if(sport.equals("basket")) {
+				Basket s=gb.findByid(ids);
+				uno.setSquadraA(s.getSquadraA());
+				uno.setSquadraB(s.getSquadraB());
+			}
+			else
+			{
+				Hockey s=gh.findByid(ids);
+				uno.setSquadraA(s.getSquadraA());
+				uno.setSquadraB(s.getSquadraB());
+			}
+			
 			uno.setQuota(nuova.get(j).getQuota());
 			uno.setRisultatoGiocato(nuova.get(j).getRisultato());
 			uno.setId(riepi.size());
