@@ -65,7 +65,7 @@ public class ControllerAdmin {
 		return "loginadmin";		
 }
 	
-	@RequestMapping(value="login",method = RequestMethod.GET)
+	@RequestMapping(value="loginadmin",method = RequestMethod.GET)
 	public String loginRoot(Model model)
 	{
 		model.addAttribute("tenebre",new Admin());

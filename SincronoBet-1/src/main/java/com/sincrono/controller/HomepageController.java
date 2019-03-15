@@ -74,6 +74,9 @@ public class HomepageController {
 		quota=quota*calcioid;
 		 uno.setRisultato("1");
 		 uno.setId(prova);
+		 uno.setQuota(calcioid);
+		 uno.setTiposport("calcio");
+		 uno.setCount(gioc.size());
 		 i=gioc.size();
 		 gioc.add(i,uno);
 		 sessiongiocata.setAttribute("gioc",gioc);
@@ -86,6 +89,9 @@ public class HomepageController {
 		Schedina uno=new Schedina(); 
 		uno.setRisultato("2");
 		 uno.setId(prova);
+		 uno.setQuota(calcioid);
+		 uno.setTiposport("calcio");
+		 uno.setCount(gioc.size());
 		 i=gioc.size();
 		 gioc.add(i,uno);
 		 sessiongiocata.setAttribute("gioc",gioc);
@@ -99,6 +105,9 @@ public class HomepageController {
 		quota=quota*calcioid;
 		 uno.setRisultato("x");
 		 uno.setId(prova);
+		 uno.setQuota(calcioid);
+		 uno.setTiposport("calcio");
+		 uno.setCount(gioc.size());
 		 i=gioc.size();
 		 gioc.add(i,uno);
 	 sessiongiocata.setAttribute("gioc",gioc);
@@ -106,10 +115,5 @@ public class HomepageController {
 		m.addAttribute("att", a);
 	return "calcio";
 }
-	@RequestMapping(value="risultati",method = RequestMethod.GET)
-	public String loginRoot(Model model,Model pol,HttpSession sessiongiocata)
-	{
-//		 sessiongiocata.setAttribute("gioc",gioc);
-		return "risultati";
-	}
+
 }
