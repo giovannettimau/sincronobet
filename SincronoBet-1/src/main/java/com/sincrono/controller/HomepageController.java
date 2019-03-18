@@ -131,4 +131,52 @@ public class HomepageController {
 		m.addAttribute("attB", a);
 	return "basket";
 }
+	@RequestMapping(value = "/sbasket1", method = RequestMethod.GET)
+	public String getid1b(@RequestParam("prova1") double basketid,@RequestParam("prova1id") int prova,Model m,HttpSession sessiongiocata,Model z) {
+		quota=quota*basketid;
+		Schedina uno=new Schedina(); 
+		uno.setRisultato("1");
+		 uno.setId(prova);
+		 uno.setQuota(basketid);
+		 uno.setTiposport("basket");
+		 uno.setCount(gioc.size());
+		 i=gioc.size();
+		 gioc.add(i,uno);
+		 sessiongiocata.setAttribute("gioc",gioc);
+		List<Basket> a=bs.findAll();
+		m.addAttribute("attB", a);
+	return "basket";
+}
+	@RequestMapping(value = "/shockey2", method = RequestMethod.GET)
+	public String getid2h(@RequestParam("prova2") double basketid,@RequestParam("prova2id") int prova,Model m,HttpSession sessiongiocata,Model z) {
+		quota=quota*basketid;
+		Schedina uno=new Schedina(); 
+		uno.setRisultato("2");
+		 uno.setId(prova);
+		 uno.setQuota(basketid);
+		 uno.setTiposport("hockey");
+		 uno.setCount(gioc.size());
+		 i=gioc.size();
+		 gioc.add(i,uno);
+		 sessiongiocata.setAttribute("gioc",gioc);
+		List<Hockey> a=hs.findAll();
+		m.addAttribute("attH", a);
+	return "hockey";
+}
+	@RequestMapping(value = "/shockey1", method = RequestMethod.GET)
+	public String getid1h(@RequestParam("prova1") double basketid,@RequestParam("prova1id") int prova,Model m,HttpSession sessiongiocata,Model z) {
+		quota=quota*basketid;
+		Schedina uno=new Schedina(); 
+		uno.setRisultato("1");
+		 uno.setId(prova);
+		 uno.setQuota(basketid);
+		 uno.setTiposport("hockey");
+		 uno.setCount(gioc.size());
+		 i=gioc.size();
+		 gioc.add(i,uno);
+		 sessiongiocata.setAttribute("gioc",gioc);
+		List<Hockey> a=hs.findAll();
+		m.addAttribute("attH", a);
+	return "hockey";
+}
 }

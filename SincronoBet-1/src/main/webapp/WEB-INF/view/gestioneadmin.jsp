@@ -10,6 +10,7 @@
 </head>
 <body>
 Benveniubbo
+ <a href="index">home page</a>
 <form>
   <fieldset>
     <legend>Informazioni account:</legend>
@@ -27,7 +28,5 @@ Benveniubbo
  <% String messaggio=(String)pageContext.getAttribute("x");
  out.println("<a href="+messaggio+">polooolo</a>");%></c:forEach> 
 
-
- 
 </body>
 </html>

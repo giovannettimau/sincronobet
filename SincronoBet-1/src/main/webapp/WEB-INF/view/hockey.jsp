@@ -30,12 +30,12 @@
 		
 	<td>
 		<c:if test="${not empty giocatore}">
-	<form action="scalcio1" id=${ z.quota1 } method="get"> 
+	<form action="shockey1" id=${ z.quota1 } method="get"> 
 	<input form= ${ z.quota1} type="hidden" name="prova1" value=${ z.quota1}>
 	<input form= ${ z.quota1 } type="hidden" name="prova1id" value=${ z.id}>
 		<button form=${ z.quota1 } type="submit" > ${z.quota1}</button>
 		</form>
-		<form action="scalcio2" id=${ z.quota2} method="get"> 
+		<form action="shockey2" id=${ z.quota2} method="get"> 
 		<input form= ${ z.quota2 } type="hidden" name="prova2" value=${ z.quota2}>
 		<input form= ${ z.quota2 } type="hidden" name="prova2id" value=${ z.id}>
 		<button form=${ z.quota2 } type="submit" > ${z.quota2}</button>
@@ -54,7 +54,7 @@
 	
 </c:forEach>
 <a href="risultati">Riepilogo giocata</a>
-<a href="hockey">Hockey</a>
+<a href="basket">basket</a>
 <a href="calcio">calcio</a>
 	</tr>
 

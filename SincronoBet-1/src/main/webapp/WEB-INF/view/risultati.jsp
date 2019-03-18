@@ -28,7 +28,7 @@
 	<td>
 
 	<c:if test="${not empty giocatore}">
-		<form action="rimuovi" id=${ fao.getId()} method="post"> 
+		<form action="rimuovi" id=${ fao.getId()} method="get"> 
 	<input form= ${ fao.getId()} type="hidden" name="indice" value=${ fao.getId()}>
 			<button form=${ fao.getId() } type="submit" > Rimuovi</button>
 		</form>

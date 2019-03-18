@@ -78,11 +78,12 @@ public class ControllerRiepilogo {
 	}
 
 	
-	@RequestMapping(value="rimuovi",method = RequestMethod.POST)
+	@RequestMapping(value="rimuovi",method = RequestMethod.GET)
 	public String rimuovigiocata(@RequestParam("indice") int indice,ModelMap model,HttpSession risultati) {
 		ArrayList<Riepilogo> rimuovi =new ArrayList();
 		ArrayList<Schedina> nuova=new ArrayList();
 		nuova=(ArrayList<Schedina>) risultati.getAttribute("gioc");
+		 
 		rimuovi=(ArrayList<Riepilogo>) risultati.getAttribute("risultati");
 		double decremento=nuova.get(indice).getQuota();
 //		try {
@@ -92,7 +93,6 @@ public class ControllerRiepilogo {
 //			return "risultati";
 //		}
 		quotatotale=quotatotale/decremento;
-		System.out.println(decremento);
 		nuova.remove(indice);
 		
 		for(int j=0;j<rimuovi.size();j++) {
@@ -104,11 +104,7 @@ public class ControllerRiepilogo {
 		risultati.setAttribute("risultati",rimuovi);
 		risultati.setAttribute("gioc",nuova);
 		model.addAttribute("quota", quotatotale);
-		
-		
-		
-		System.out.println(indice);
-		return "risultati";
+		return "redirect:risultati";
 	
 	}
 	
