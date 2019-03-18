@@ -44,6 +44,10 @@ public class ControllerRiepilogo {
 //		System.out.println(nuova.get(0).getRisultato());
 		quotatotale=1;
 		for(int j=0;j<nuova.size();j++) {
+			System.out.println(nuova.get(j).getId());
+//			System.out.println(nuova.get(j).getRisultato());
+//			System.out.println(nuova.get(j).getQuota());
+//			System.out.println(nuova.get(j).getTiposport());
 			Riepilogo uno=new Riepilogo();
 			int ids=nuova.get(j).getId();
 			String sport=nuova.get(j).getTiposport();
@@ -120,5 +124,9 @@ public class ControllerRiepilogo {
 		
 		return "risultati";
 	}
-	
+	  @RequestMapping(value="logout", method = RequestMethod.GET)
+      public String logout(HttpSession session) {
+        session.invalidate();
+        return "index";
+      }
 }

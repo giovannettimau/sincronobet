@@ -11,8 +11,24 @@
 <body>
 <div class="bg">
 <br>
+<c:if test="${empty giocatore}">
 <p align="right"><a href="loginutente" style="color: white">Login Utente</a>
+</c:if>
+<c:if test="${not empty giocatore}">
+<form style="color:white;">
+
+<td>Welcome:  ${sessionScope.giocatore.getNome()}</td>
+</form>
+</c:if>
+<c:if test="${empty admin }">
 	&nbsp&nbsp<a href="loginadmin" style="color: white">Login Admin</a>
+	</c:if>
+<c:if test="${not empty admin }">
+<form style="color:white;">
+
+<td>Admin:  ${sessionScope.admin.getNome()}</td>
+</form>
+</c:if>
 	</p>
 
 <h1 align="center" ><strong><font style="font-family: Georgia; color: white; font-size: 70px;"> SINCRONO BET </font></strong> </h1>
@@ -53,5 +69,6 @@
 <br>
 <img src="http://atlanticabingo.it/wp-content/uploads/2018/02/footer.png" style="width: 40%" align=left> 
 <br><br><p style="text-align:right; color: white">Informati sulle probabilità di vincita e sul regolamento di gioco sul sito <a class="link_basso" href="http://www.adm.gov.it">www.adm.gov.it</a>
+
 </body>
 </html>

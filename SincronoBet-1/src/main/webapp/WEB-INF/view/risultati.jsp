@@ -64,7 +64,11 @@
 <c:if test="${not empty possvinc}">
 		<c:out value="${possvinc}"></c:out>
 	</c:if>
-		
+				
+<form action="logout" method="get">
+ <button style="float: right;" type="submit">LOGOUT</button>
+
+</form>
 
 </body>
 </html>

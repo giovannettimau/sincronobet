@@ -94,6 +94,10 @@ public class ControllerAdmin {
 		sgs.deleteBysgid(id);
 		return "gestioneadmin";
 		}
-	}
+	@RequestMapping(value="index")
+	public String ritornahomepage() {
+		return "index";
+	}	
+}
 
 
