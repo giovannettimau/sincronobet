@@ -32,12 +32,14 @@ Login
 <form:input path="password" />
 <input type="submit" />
 </form:form>
-<%-- <form> --%>
-<!--   <fieldset> -->
-<!--     <legend>Informazioni account:</legend> -->
-<%--     Email:${sessionScope.giocatore.getNome()} <br> --%>
-<%--     Nome:${sessionScope.giocatore.getCognome()}<br> --%>
-<!--   </fieldset> -->
-<%-- </form> --%>
+<%-- <c:if test="${not empty giocatore}"> --%>
+<%-- 	<form> --%>
+<!--   		<fieldset> -->
+<!--     		<legend>Benvenuto Giocatore</legend> -->
+<%--    		 	Email:${sessionScope.giocatore.getNome()} <br> --%>
+<%--     		Nome:${sessionScope.giocatore.getCognome()}<br> --%>
+<!--   		</fieldset> -->
+<%-- 	</form> --%>
+<%-- </c:if> --%>
 </body>
 </html>

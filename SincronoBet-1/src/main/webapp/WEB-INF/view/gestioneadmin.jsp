@@ -7,9 +7,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
 </head>
 <body>
-Benveniubbo
+Welcome
 <form>
   <fieldset>
     <legend>Informazioni account:</legend>
@@ -27,7 +28,7 @@ Benveniubbo
  <% String messaggio=(String)pageContext.getAttribute("x");
  out.println("<a href="+messaggio+">polooolo</a>");%></c:forEach> 
 
+<a href="index">Home Page</a>
 
- 
 </body>
 </html>

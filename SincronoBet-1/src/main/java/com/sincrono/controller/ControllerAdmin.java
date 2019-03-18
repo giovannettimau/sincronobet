@@ -47,6 +47,7 @@ public class ControllerAdmin {
 		String pass=tenebre.getPassword();
 		String msg;
 		Admin c= nn.findByemail(a);	
+		
 		if(c==null) {
 			msg="email sbagliata";
 			s.addAttribute("cus", msg);
@@ -94,6 +95,13 @@ public class ControllerAdmin {
 		sgs.deleteBysgid(id);
 		return "gestioneadmin";
 		}
+	
+	@RequestMapping(value="index")
+	public String ritornahomepage() {
+		return "index";
+	
 	}
+
+}
 
 

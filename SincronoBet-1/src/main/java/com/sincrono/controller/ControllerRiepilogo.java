@@ -78,7 +78,7 @@ public class ControllerRiepilogo {
 	}
 
 	
-	@RequestMapping(value="rimuovi",method = RequestMethod.POST)
+	@RequestMapping(value="rimuovi",method = RequestMethod.GET)
 	public String rimuovigiocata(@RequestParam("indice") int indice,ModelMap model,HttpSession risultati) {
 		ArrayList<Riepilogo> rimuovi =new ArrayList();
 		ArrayList<Schedina> nuova=new ArrayList();
@@ -108,7 +108,7 @@ public class ControllerRiepilogo {
 		
 		
 		System.out.println(indice);
-		return "risultati";
+		return "redirect:risultati";
 	
 	}
 	
@@ -125,4 +125,11 @@ public class ControllerRiepilogo {
 		return "risultati";
 	}
 	
-}
+	  @RequestMapping(value="logout", method = RequestMethod.GET)
+      public String logout(HttpSession session) {
+        session.invalidate();
+        return "index";
+      }
+    }
+	
+

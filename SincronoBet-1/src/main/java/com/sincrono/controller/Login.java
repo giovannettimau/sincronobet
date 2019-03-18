@@ -29,6 +29,7 @@ public class Login  {
 		String p=c.getPassword();
 		if(p.equals(pass)) {
 			session.setAttribute("giocatore",c);
+			session.removeAttribute("admin");
 			return "index";	
 		}
 		else {
@@ -83,4 +84,9 @@ public class Login  {
 		model.addAttribute("personForm",new Customer());
 	    return "loginutente";
 	}
+//	@RequestMapping(value="index")
+//	public String ritornahomepage() {
+//		return "index";
+//	
+//	}
 }
