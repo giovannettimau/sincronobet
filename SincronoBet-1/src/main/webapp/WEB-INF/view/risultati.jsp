@@ -49,6 +49,10 @@
 	</fmt:formatNumber>
 	</form>
 	<form>
+	<fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${quot}">
+	</fmt:formatNumber>
+	</form>
+	<form>
   <fieldset>
     <legend>Informazioni account:</legend>
     Email:${sessionScope.giocatore.getNome()} <br>
@@ -56,9 +60,14 @@
   </fieldset>
 </form>
 <form action="simula" id=${ quota} method="get"> 
-   Puntata: <input type="text" required="true" name="puntata"><br>
+   Puntata: <input type="text" name="puntata"><br>
   <input form= ${ quota } type="hidden" name="quota" value=${ quota}>
 			<button form=${ quota } type="submit" > simula</button>
+			
+</form>
+<form action="gioca" method="get"> 
+   puntata: <input type="text" required="true" name="puntata"><br>
+			<button  type="submit" > gioca</button>
 			
 </form>
 <c:if test="${not empty possvinc}">

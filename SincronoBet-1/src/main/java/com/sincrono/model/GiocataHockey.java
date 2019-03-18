@@ -1,6 +1,8 @@
 package com.sincrono.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -17,6 +19,7 @@ import lombok.Setter;
 public class GiocataHockey {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int h_id;
 	@Column(name="customer_id")
 	private int hid;

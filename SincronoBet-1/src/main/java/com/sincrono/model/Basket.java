@@ -36,5 +36,8 @@ public class Basket {
 	
 	@Column(name="quota_2")
 	private Double quota2;
+	
+	@Column(name="risultato")
+	private String risultato;
 
 }

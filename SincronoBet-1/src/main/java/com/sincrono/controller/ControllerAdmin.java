@@ -95,7 +95,8 @@ public class ControllerAdmin {
 		return "gestioneadmin";
 		}
 	@RequestMapping(value="index")
-	public String ritornahomepage() {
+	public String ritornahomepage(HttpSession sessionprova ) {
+		sessionprova.removeAttribute("giocatore");
 		return "index";
 	}	
 }
