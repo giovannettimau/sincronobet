@@ -41,7 +41,7 @@ public class ControllerAdmin {
 	    return "gestioneadmin";
 	}
 
-	@RequestMapping(path="/provacenoyz",method=RequestMethod.POST)
+	@RequestMapping(path="/gestioneadmin",method=RequestMethod.POST)
 	public String getIndex(@ModelAttribute("tenebre") Admin tenebre,@ModelAttribute("csmdelete") Customer csmdelete,Model m,Model s,HttpSession sessionadmin) {
 		String a=tenebre.getEmail();
 		String pass=tenebre.getPassword();

@@ -138,7 +138,11 @@ public class ControllerRiepilogo {
 		
 		String possvinc;
 		possvinc=format.format(quota*puntata);
-		Double.parseDouble(possvinc); 
+		
+		
+		try{
+			Double.parseDouble(possvinc); 
+		}catch(NumberFormatException e) {}
 		mg.addAttribute("quota",quota);
 		pv.addAttribute("possvinc",possvinc);
 		return "risultati";
@@ -149,7 +153,7 @@ public class ControllerRiepilogo {
         return "index";
       }
 		@RequestMapping(value="gioca")
-		public String getgiocata(@RequestParam("puntata") double puntata,ModelMap pv,ModelMap mg,HttpSession risultati) {
+		public String getgiocata(@RequestParam("puntata") double puntata,ModelMap msg,ModelMap pv,ModelMap mg,HttpSession risultati) {
 			 double quot=1;
 			 boolean vittoria = true;
 			 StoricoGiocate id=new StoricoGiocate();
@@ -176,7 +180,7 @@ public class ControllerRiepilogo {
 					}
 					giocatacalcio.setRisultato(risultato);
 					giocatacalcio.setCid(idgiocatore);
-					giocatacalcio.setStoricogiocate(idgiocate);
+					giocatacalcio.setStoricogiocate(idgiocate+1);
 					giocatacalcio.setCalcid(nuova.get(j).getId());
 					gcs.save(giocatacalcio);
 				
@@ -190,7 +194,7 @@ public class ControllerRiepilogo {
 					}
 					giocatabasket.setRisultato(risultato);
 					giocatabasket.setBid(idgiocatore);
-					giocatabasket.setStoricogiocate(idgiocate);
+					giocatabasket.setStoricogiocate(idgiocate+1);
 					giocatabasket.setBaskid(nuova.get(j).getId());
 					gbs.save(giocatabasket);
 				}
@@ -203,30 +207,36 @@ public class ControllerRiepilogo {
 					}
 					giocatahockey.setRisultato(risultato);
 					giocatahockey.setHid(idgiocatore);
-					giocatahockey.setStoricogiocate(idgiocate);
+					giocatahockey.setStoricogiocate(idgiocate+1);
 					giocatahockey.setHockeyid(nuova.get(j).getId());
 					ghs.save(giocatahockey);
 				}
 			}
 			if(vittoria) {
-			System.out.println("bravo");
+//			System.out.println("bravo");
 			id.setPuntata(puntata);
 			id.setVincita(puntata*quot);
 			id.setSaldo(puntata*quot-puntata);
 			id.setSgid(idgiocatore);
 			id.setData(new Date());
 			sgs.save(id);
+			risultati.setAttribute("vincita",id.getSaldo());
+			String msgio="COMPLIMENTI HAI VINTO!!!";
+			msg.addAttribute("msg",msgio);
 			}else {
-				System.out.println("hai perso lota");
+//				System.out.println("hai perso lota");
 				id.setPuntata(puntata);
 				id.setVincita(0);
 				id.setSaldo(-puntata);
 				id.setSgid(idgiocatore);
 				id.setData(new Date());
 				sgs.save(id);
+				risultati.setAttribute("vincita",id.getSaldo());
+				String msgio="MI DISPIACE HAI PERSO, RITENTA!!!";
+				msg.addAttribute("msg",msgio);
 			
 			}
-			System.out.println(idgiocate);
+			risultati.removeAttribute("risultati");
 			return "risultati";
 		}
 }

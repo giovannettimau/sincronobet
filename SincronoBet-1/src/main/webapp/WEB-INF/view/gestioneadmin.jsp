@@ -5,28 +5,121 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+	
+	<link href="../CSS/style.css" rel="stylesheet" type="text/css">
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Gestione Portale</title>
+
+<script>
+function VisualizzaCampoUt(){
+	document.getElementById('eliminaUtente').style.display = "block";
+	document.getElementById('eliminaGiocataDaId').style.display = "none";
+	document.getElementById('visualizzaUtenti').style.display = "none";
+}
+function VisualizzaCampoId(){
+	document.getElementById('eliminaGiocataDaId').style.display = "block";
+	document.getElementById('eliminaUtente').style.display = "none";
+	document.getElementById('visualizzaUtenti').style.display = "none";
+}
+function VisualizzaSchermataPrincipale(){
+	document.getElementById('eliminaUtente').style.display = "none";
+	document.getElementById('eliminaGiocataDaId').style.display = "none";
+	document.getElementById('visualizzaUtenti').style.display = "none";
+}
+/*function VisualizzaUt(){
+	document.getElementById('visualizzaUtenti').style.display = "block";
+	document.getElementById('eliminaUtente').style.display = "none";
+	document.getElementById('eliminaGiocataDaId').style.display = "none";
+}*/
+</script>
+
+
 </head>
-<body>
-Benveniubbo
- <a href="index">home page</a>
-<form>
-  <fieldset>
-    <legend>Informazioni account:</legend>
-    Email:${sessionScope.admin.getNome()} <br>
-    Nome:${sessionScope.admin.getCognome()}<br>
+
+<body class = "pagesadmin">
+ 
+ 
+ <div class=row>
+   <div class="col-0"></div>
+   		<div class="col-2">
+ 		<h4><a href="index"class="text-warning" >HOME PAGE</a></h4>
+ 		</div>
+ 		<div class="col-11"></div>
+ 		</div>
+ 	
+ 
+ 
+<div class="container mar-top-10" >
+<h2 class="text-center mar-top-10">Benvenuto ${sessionScope.admin.getNome()}!</h2>
+<div class="container p-3">
+  <fieldset class="border p-2">
+  <br>
+		<div class = "row">
+			<div class = "col-3">
+			</div>
+			<div  class = "col-2">
+				<input type="submit" class = "btn btn-success btn-primary" value = "Elimina utente" onclick = "VisualizzaCampoUt()"/>
+			</div>
+			<div class = "col-2"></div>
+			<div  class = "col-2">
+				<input type="submit" class = "btn btn-success btn-primary" value = "Elimina giocate" onclick = "VisualizzaCampoId()"/>
+			</div>
+			<div class = "col-2"></div>
+			<div class = "col-3"></div>
+		</div>
+  <br>
+  <br>
   </fieldset>
-</form>
-<form:form action="cancellacsm" method="post" modelAttribute="csmdelete">
-<label>email:</label>
-<form:input path="email"/>
-<input type="submit" />
-</form:form>
+  <div class = "row">
+   <div class = "col-1"><a href ="#" onclick = "VisualizzaSchermataPrincipale()" style = "color: red"><h5><b>Reset</b></h5></a></div>
+  <div class = "col-10"></div>
+  <div class = "col-1">  <a href ="visualizzaUT" style = "color: yellow"><h5><b>Lista Utenti</b></h5></a></div>
+  </div>
+   <br>
+   <br>
+   <br>
+	<div id = "eliminaUtente" style = "display: none">
+<form:form action="cancellacsm" method="post" modelAttribute="csmdelete" class = "formclass">
+				<div class = "row">
+					<div class = "col-6">
+						<label>Email:</label>
+						<form:input class="form-control" type = "text" path="email" placeholder = "Inserisci email utente"/>
+					</div>
+					<div class = "col-2"></div>
+					<div class = "col-2">
+						<input type="submit"  class = "btn btn-success btn-primary" value = "Elimina utente e giocate" onclick = "alert('Utente e giocate eliminati.')"/>
+					</div>
+					<div class = "col-2"></div>
+				</div>
+			</form:form>
+	</div>
+	
+	<div id = "eliminaGiocataDaId" style = "display: none">
+			<form:form action="cancellagsg" method="get" modelAttribute="csmdelete" class = "formclass">
+				<div class = "row">
+					<div class = "col-6">
+						<label>Id utente:</label>
+						<form:input class="form-control" type = "number" path="customer_id" placeholder = "Inserisci id utente"/>
+					</div>
+					<div class = "col-2"></div>
+					<div class = "col-2">
+						<input type="submit"  class = "btn btn-success btn-primary" value = "Elimina" onclick = "alert('Giocate eliminate.')"/>
+					</div>
+					<div class = "col-2"></div>
+				</div>
+			</form:form>
+	</div>
+	</div>
+</div>
 
-<c:forEach items="${cus}" var="x">
- <% String messaggio=(String)pageContext.getAttribute("x");
- out.println("<a href="+messaggio+">polooolo</a>");%></c:forEach> 
 
+ 
+
+
+ 
 </body>
 </html>

@@ -29,6 +29,7 @@ public class Login  {
 		String p=c.getPassword();
 		if(p.equals(pass)) {
 			session.setAttribute("giocatore",c);
+			session.removeAttribute("admin");
 			return "index";	
 		}
 		else {
@@ -47,7 +48,7 @@ public class Login  {
 		model.addAttribute("personForm",new Customer());
 	    return "index";
 	}
-	@RequestMapping(path="provace",method=RequestMethod.POST)
+	@RequestMapping(path="registrati",method=RequestMethod.POST)
 	public String getregistradati(@ModelAttribute("personForm") Customer personForm,Model m,Model v,Model da) {
 		Customer nuovo=new Customer();
 		int last;
