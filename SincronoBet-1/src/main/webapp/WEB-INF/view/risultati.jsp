@@ -78,6 +78,9 @@
  <button style="float: right;" type="submit">LOGOUT</button>
 
 </form>
-
+<c:if test="${not empty vincita}">
+		<c:out value="${msg}"></c:out>
+		<c:out value="${vincita}"></c:out>
+	</c:if>
 </body>
 </html>
