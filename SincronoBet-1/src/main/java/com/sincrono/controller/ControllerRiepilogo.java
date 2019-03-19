@@ -181,7 +181,7 @@ public class ControllerRiepilogo {
 					}
 					giocatacalcio.setRisultato(risultato);
 					giocatacalcio.setCid(idgiocatore);
-					giocatacalcio.setStoricogiocate(idgiocate);
+					giocatacalcio.setStoricogiocate(idgiocate+1);
 					giocatacalcio.setCalcid(nuova.get(j).getId());
 					gcs.save(giocatacalcio);
 				
@@ -195,7 +195,7 @@ public class ControllerRiepilogo {
 					}
 					giocatabasket.setRisultato(risultato);
 					giocatabasket.setBid(idgiocatore);
-					giocatabasket.setStoricogiocate(idgiocate);
+					giocatabasket.setStoricogiocate(idgiocate+1);
 					giocatabasket.setBaskid(nuova.get(j).getId());
 					gbs.save(giocatabasket);
 				}
@@ -208,7 +208,7 @@ public class ControllerRiepilogo {
 					}
 					giocatahockey.setRisultato(risultato);
 					giocatahockey.setHid(idgiocatore);
-					giocatahockey.setStoricogiocate(idgiocate);
+					giocatahockey.setStoricogiocate(idgiocate+1);
 					giocatahockey.setHockeyid(nuova.get(j).getId());
 					ghs.save(giocatahockey);
 				}

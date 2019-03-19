@@ -180,5 +180,8 @@ public class HomepageController {
 		m.addAttribute("attH", a);
 	return "hockey";
 }
-
+//	@RequestMapping(value="profilo")
+//	public String ritornahomepage( ) {	
+//		return "profilo";
+//	}
 }

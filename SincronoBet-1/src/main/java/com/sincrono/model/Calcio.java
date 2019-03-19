@@ -42,5 +42,11 @@ public class Calcio {
 	@Column(name="risultato")
 	private String risultato;
 	
+	@Column(name="p_1")
+	private int p1;
+	
+	@Column(name="p_2")
+	private int p2;
+	
 	
 }

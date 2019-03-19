@@ -1,121 +1,113 @@
 @charset "ISO-8859-1";
 
+.mar-top-0{
+	margin-top: 0px;
+}
+
+.mar-top-10{
+	margin-top: 10px;
+}
+
+#pagerisultati{
+	background: url(https://media.istockphoto.com/vectors/bright-sport-shoe-sneakers-rainbow-paint-vector-id507184104) no-repeat center center fixed;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	-o-background-size: 100% auto;
+	 background-size: 100% auto;
+}
+#pageindex{
+	background: url(http://www.top10list.cz/wp-content/uploads/2012/03/feature1.jpg) no-repeat center center fixed;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	-o-background-size: 100% auto;
+	 background-size: 100% auto;
+}
+#pagecalcio{
+	background: url(https://ak2.picdn.net/shutterstock/videos/12352952/thumb/1.jpg) no-repeat center center fixed;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	-o-background-size: 100% auto;
+	 background-size: 100% auto;
+}
+#pagebasket{
+	background: url(https://basketballqld.com.au/wp-content/uploads/2016/06/basketball-floor.jpg) no-repeat center center fixed;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	-o-background-size: 100% auto;
+	 background-size: 100% auto;
+}
+#pagehockey{
+	background: url(http://www.strettoweb.com/wp-content/uploads/2016/11/Hockey.jpg)  no-repeat center center fixed;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	-o-background-size: 100% auto;
+	 background-size: 100% auto;
+}
+#pageloginutente{
+	 background: url(http://www.sportmanagement.it/thiene/wp-content/uploads/sites/24/2018/11/sport-per-tutti.jpg)  no-repeat center center fixed;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	-o-background-size: 100% auto;
+	 background-size: 100% auto;
+}
+
+.pagesadmin{
+	background: url(http://www.pptbackgrounds.org/uploads/athletic-track-powerpoint-templates.jpg)  no-repeat center center fixed;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	-o-background-size: 100% auto;
+	 background-size: 100% auto;
+}
 body, html{
 	height: 100%;
 	margin: 0;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: serif;
 }
 
-.formclass {
-	border: 3px solid #f1f1f1;
-	
+.navbar-nav{
+    display: flex;
+    -webkit-box-direction: normal;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none; 
 }
 
-.inputtext{
-  width: 30%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+.navbar .navbar-inner {
+    padding: 0;
 }
 
-.buttonlogin {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  float: right;
-  cursor: pointer;
-  width: 10%;
+.navbar .nav {
+    margin: 0;
+    display: table;
+    width: 100%;
 }
 
-.altributton {
-  background-color: #e63900;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  float: left;
-  cursor: pointer;
-  width: 10%;
+.navbar .nav li {
+    display: table-cell;
+    width: 1%;
+    float: none;
 }
 
-button:hover {
-  opacity: 0.8;
+.navbar .nav li a {
+    font-weight: bold;
+    text-align: center;
+    border-left: 1px solid rgba(255, 255, 255, .75);
+    border-right: 1px solid rgba(0, 0, 0, .1);
+    background-color: #4CAF50;   /*dichiarato da noi*/
 }
 
-
-.container {
-  padding: 16px;
+.navbar .nav li a:hover{   /*dichiarato da noi*/
+	background-color: #111;
 }
 
-span.psw {
-  float: right;
-  padding-top: 16px;
+.navbar .nav li:first-child a {
+    border-left: 0;
+    border-radius: 6px 0 0 6px;  /*ho modificato il originale 3px 0 0 3px*/
 }
 
-.bg{
-	background-image: url(http://www.top10list.cz/wp-content/uploads/2012/03/feature1.jpg);
-	height: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.bglogin{
-	background-image: url(http://www.sportmanagement.it/thiene/wp-content/uploads/sites/24/2018/11/sport-per-tutti.jpg);
-	height: 70%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.bgadmin{
-	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB_j3Zu8llRWx9uDkrXNyA_VZJKckDaOn9-Inld9akagoSQOn9vA);
-	height: 70%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.disc{
-	background-image: url(../IMG/gioca.jpg);
-	background-position:right;
-	background-size: 30px;
-}
-
-
-ul {
-  width: 40%;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #4CAF50;
-  position: absolute;
-  right: 29%;
-  border-radius: 10px;
-  
-}
-
-li {
-  width: 33.3%;
-  float: left;
-  
-}
-
-.b1{
-	background-color:#4CAF50;
-	border-radius: 5px;
-	color:white;
-	text-align:center;
-	display: inline-block;
-	cursor: pointer;
-	font-size: 14px;
-	text-decoration: none;
-	padding: 2% 27%;
+.navbar .nav li:last-child a {
+    border-right: 0;
+    border-radius: 0 6px 6px 0;  /*ho modificato il originale 0 3px 3px 0*/
 }
 
 li a {
@@ -126,31 +118,25 @@ li a {
   text-decoration: none;
 }
 
-li a:hover {
-  background-color: #111;
+
+.formclass {
+	border: 3px solid #f1f1f1;
+	padding: 3%;
 }
 
-table {
-	
-	background-color:white;
-	border: 1px solid black;
-	align: center;
-	margin-top: 10%;
-	color: black;
-	margin-left: auto;
-	margin-right: auto;
-	
-	
+span.psw {
+  float: right;
+  padding-top: 16px;
 }
 
-.tablematch{
-	text-align:center;
-	font-size: 14px;
+.disc{
+	background-image: url(../IMG/gioca.jpg);
+	background-position:right;
+	background-size: 30px;
 }
 
-th, td {
-	
-	border: 1px solid black;
+tbody {
+	background-color: white;
 }
 
 a.link_basso:hover{
