@@ -25,7 +25,7 @@
 			<th class="text-center"><b>squadraB</b></th>
 			<th class="text-center"><b>quota1</b></th>
 			<th class="text-center"><b>quota2</b></th>
-			<th class="text-center"><b>operazione</b></th>
+			<th class="text-center"><b>gioca</b></th>
 		</tr>
 	</thead>
 <c:forEach items="${attH}" var="z">
@@ -38,15 +38,24 @@
 		<td>${z.quota2}</td>
 		
 	<td style = "text-align: center;">
-	
-	<c:if test="${not empty utente}">
-		<a class="btn btn-success btn-sm" style = "width:100%;" href="riepilogo">Scommetti</a>
-		
+	<div class = "row" style="margin-right:0; 	margin-left:0;">
+	<c:if test="${not empty giocatore}">
+	<form action="shockey1" id=${ z.quota1 } method="get"> 
+	<input form= ${ z.quota1} type="hidden" name="prova1" value=${ z.quota1}>
+	<input form= ${ z.quota1 } type="hidden" name="prova1id" value=${ z.id}>
+		<button form=${ z.quota1 } class="btn btn-success btn-sm" type="submit" > ${z.quota1}</button>
+		</form>
+		&nbsp;
+		<form action="shockey2" id=${ z.quota2} method="get"> 
+		<input form= ${ z.quota2 } type="hidden" name="prova2" value=${ z.quota2}>
+		<input form= ${ z.quota2 } type="hidden" name="prova2id" value=${ z.id}>
+		<button form=${ z.quota2 } class="btn btn-success btn-sm" type="submit" > ${z.quota2}</button>
+		</form>
 	</c:if>
-	<c:if test="${empty utente}">
-		<a class="btn btn-success btn-sm" style = "width:100%;" href="loginutente">Login</a>
+	<c:if test="${empty giocatore}">
+		<a class="btn btn-success btn-sm" href="loginutente">Login</a>
 </c:if>
-
+</div>
 	</td>
 	
 	</tr>
@@ -55,7 +64,18 @@
 
 
 </table>
+<br>
+<hr color="black">
+<div class = "row">
+<div class = "col-10"></div>
+<div class = "col-2">
+<a href="risultati" style= "color:#12B7D8"><b>Riepilogo giocata</b></a><br>
+<a href="basket" style= "color:#12B7D8"><b>Basket</b></a><br>
+<a href="calcio" style= "color:#12B7D8"><b>Calcio</b></a>
 </div>
 </div>
+</div>
+</div>
+<br>
 </body>
 </html>

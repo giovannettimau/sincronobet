@@ -43,7 +43,7 @@ public class Login  {
 		model.addAttribute("personForm",new Customer());
 	    return "index";
 	}
-	@RequestMapping(path="provace",method=RequestMethod.POST)
+	@RequestMapping(path="registra",method=RequestMethod.POST)
 	public String getregistradati(@ModelAttribute("personForm") Customer personForm,Model m,Model v,Model da) {
 		Customer nuovo=new Customer();
 		int last;

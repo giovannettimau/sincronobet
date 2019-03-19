@@ -8,6 +8,13 @@
 	margin-top: 10px;
 }
 
+#pagerisultati{
+	background: url(https://media.istockphoto.com/vectors/bright-sport-shoe-sneakers-rainbow-paint-vector-id507184104) no-repeat center center fixed;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	-o-background-size: 100% auto;
+	 background-size: 100% auto;
+}
 #pageindex{
 	background: url(http://www.top10list.cz/wp-content/uploads/2012/03/feature1.jpg) no-repeat center center fixed;
 	-webkit-background-size: 100% auto;
@@ -116,47 +123,7 @@ li a {
 	border: 3px solid #f1f1f1;
 	padding: 3%;
 }
-/*
-.inputtext{
-  width: 30%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
 
-.buttonlogin {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  float: right;
-  cursor: pointer;
-  width: 10%;
-}
-
-
-.altributton {
-  background-color: #e63900;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  float: left;
-  cursor: pointer;
-  width: 10%;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-.container {
-  padding: 1%;
-}
- */
 span.psw {
   float: right;
   padding-top: 16px;
@@ -168,19 +135,6 @@ span.psw {
 	background-size: 30px;
 }
 
-/*
-.b1{
-	background-color:#4CAF50;
-	border-radius: 5px;
-	color:white;
-	text-align:center;
-	display: inline-block;
-	cursor: pointer;
-	font-size: 14px;
-	text-decoration: none;
-	padding: 2% 27%;
-}
- */
 tbody {
 	background-color: white;
 }
@@ -188,4 +142,6 @@ tbody {
 a.link_basso:hover{
 	color: white;
 }
+
+
 

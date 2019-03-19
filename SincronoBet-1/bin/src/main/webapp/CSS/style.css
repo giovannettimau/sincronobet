@@ -1,0 +1,191 @@
+@charset "ISO-8859-1";
+
+.mar-top-0{
+	margin-top: 0px;
+}
+
+.mar-top-10{
+	margin-top: 10px;
+}
+
+#pageindex{
+	background: url(http://www.top10list.cz/wp-content/uploads/2012/03/feature1.jpg) no-repeat center center fixed;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	-o-background-size: 100% auto;
+	 background-size: 100% auto;
+}
+#pagecalcio{
+	background: url(https://ak2.picdn.net/shutterstock/videos/12352952/thumb/1.jpg) no-repeat center center fixed;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	-o-background-size: 100% auto;
+	 background-size: 100% auto;
+}
+#pagebasket{
+	background: url(https://basketballqld.com.au/wp-content/uploads/2016/06/basketball-floor.jpg) no-repeat center center fixed;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	-o-background-size: 100% auto;
+	 background-size: 100% auto;
+}
+#pagehockey{
+	background: url(http://www.strettoweb.com/wp-content/uploads/2016/11/Hockey.jpg)  no-repeat center center fixed;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	-o-background-size: 100% auto;
+	 background-size: 100% auto;
+}
+#pageloginutente{
+	 background: url(http://www.sportmanagement.it/thiene/wp-content/uploads/sites/24/2018/11/sport-per-tutti.jpg)  no-repeat center center fixed;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	-o-background-size: 100% auto;
+	 background-size: 100% auto;
+}
+
+.pagesadmin{
+	background: url(http://www.pptbackgrounds.org/uploads/athletic-track-powerpoint-templates.jpg)  no-repeat center center fixed;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	-o-background-size: 100% auto;
+	 background-size: 100% auto;
+}
+body, html{
+	height: 100%;
+	margin: 0;
+	font-family: serif;
+}
+
+.navbar-nav{
+    display: flex;
+    -webkit-box-direction: normal;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none; 
+}
+
+.navbar .navbar-inner {
+    padding: 0;
+}
+
+.navbar .nav {
+    margin: 0;
+    display: table;
+    width: 100%;
+}
+
+.navbar .nav li {
+    display: table-cell;
+    width: 1%;
+    float: none;
+}
+
+.navbar .nav li a {
+    font-weight: bold;
+    text-align: center;
+    border-left: 1px solid rgba(255, 255, 255, .75);
+    border-right: 1px solid rgba(0, 0, 0, .1);
+    background-color: #4CAF50;   /*dichiarato da noi*/
+}
+
+.navbar .nav li a:hover{   /*dichiarato da noi*/
+	background-color: #111;
+}
+
+.navbar .nav li:first-child a {
+    border-left: 0;
+    border-radius: 6px 0 0 6px;  /*ho modificato il originale 3px 0 0 3px*/
+}
+
+.navbar .nav li:last-child a {
+    border-right: 0;
+    border-radius: 0 6px 6px 0;  /*ho modificato il originale 0 3px 3px 0*/
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+.formclass {
+	border: 3px solid #f1f1f1;
+	padding: 3%;
+}
+/*
+.inputtext{
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.buttonlogin {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  float: right;
+  cursor: pointer;
+  width: 10%;
+}
+
+
+.altributton {
+  background-color: #e63900;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  float: left;
+  cursor: pointer;
+  width: 10%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.container {
+  padding: 1%;
+}
+ */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+.disc{
+	background-image: url(../IMG/gioca.jpg);
+	background-position:right;
+	background-size: 30px;
+}
+
+/*
+.b1{
+	background-color:#4CAF50;
+	border-radius: 5px;
+	color:white;
+	text-align:center;
+	display: inline-block;
+	cursor: pointer;
+	font-size: 14px;
+	text-decoration: none;
+	padding: 2% 27%;
+}
+ */
+tbody {
+	background-color: white;
+}
+
+a.link_basso:hover{
+	color: white;
+}
+

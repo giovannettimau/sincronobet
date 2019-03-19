@@ -33,7 +33,7 @@ public class Calcio {
 	@Column(name="quota_1")
 	private Double quota1;
 	
-	@Column(name="quota_x")
+	@Column(name="x")
 	private Double quotax;
 	
 	@Column(name="quota_2")

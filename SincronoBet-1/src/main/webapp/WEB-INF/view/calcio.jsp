@@ -28,7 +28,7 @@
 			<th class="text-center"><b>quota1</b></th>
 			<th class="text-center"><b>quotaX</b></th>
 			<th class="text-center"><b>quota2</b></th>
-			<th class="text-center"><b>operazione</b></th>
+			<th class="text-center"><b>gioca</b></th>
 		</tr>
 	</thead>
 <c:forEach items="${att}" var="x">
@@ -44,16 +44,35 @@
 		<td>${x.quota2}</td>
 		
 	<td style = "text-align: center;">
-	
+	<div class = "row" style="margin-right:0; 	margin-left:0;">
 	<c:if test="${not empty giocatore}">
-		<a class="btn btn-success btn-sm" style = "width:100%;" href="riepilogo">Scommetti</a>
+	<form action="scalcio1" id=${ x.quota1 } method="get"> 
+	<input form= ${ x.quota1} type="hidden" name="prova1" value=${ x.quota1}>
+	<input form= ${ x.quota1 } type="hidden" name="prova1id" value=${ x.id}>
+		<button form=${ x.quota1 } class="btn btn-success btn-sm" type="submit"> ${x.quota1}</button>
+		</form>
+			&nbsp;
+		<form action="scalcio2" id=${ x.quota2} method="get"> 
+		<input form= ${ x.quota2 } type="hidden" name="prova2" value=${ x.quota2}>
+		<input form= ${ x.quota2 } type="hidden" name="prova2id" value=${ x.id}>
+		<button form=${ x.quota2 } class="btn btn-success btn-sm" type="submit"> ${x.quota2}</button>
+		</form>
+		&nbsp;
+			<form action="scalciox" id=${ x.quotax } method="get"> 
+	<input form= ${ x.quotax } type="hidden" name="provax" value=${ x.quotax}>
+		<input form= ${ x.quotax} type="hidden" name="provaxid" value=${ x.id}>
+		<button form=${ x.quotax} class="btn btn-success btn-sm" type="submit"> ${x.quotax}</button>
+		</form>
 		
 	</c:if>
 	<c:if test="${empty giocatore}">
-		<a class="btn btn-success btn-sm" style = "width:100%;" href="loginutente">Login</a>
+		<a class="btn btn-success btn-sm" href="loginutente">Login</a>
 	   	
 		
 	</c:if>
+	</div>
+	   	
+		
 
 	</td>
 	
@@ -63,7 +82,18 @@
 
 
 </table>
+<br>
+<hr color="black">
+<div class = "row">
+<div class = "col-10"></div>
+<div class = "col-2">
+<a href="risultati" style= "color:#155612"><b>Riepilogo giocata</b></a><br>
+<a href="hockey"  style= "color:#155612"><b>Hockey</b></a><br>
+<a href="basket"  style= "color:#155612"><b>Basket</b></a>
 </div>
 </div>
+</div>
+</div>
+<br>
 </body>
 </html>

@@ -1,9 +1,7 @@
 package com.sincrono.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
@@ -17,12 +15,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sincrono.model.Admin;
 import com.sincrono.model.AdminService;
-import com.sincrono.model.Calcio;
 import com.sincrono.model.Customer;
 import com.sincrono.model.CustomerService;
 import com.sincrono.model.GiocataBasketService;
 import com.sincrono.model.GiocataCalcioService;
 import com.sincrono.model.GiocateHockeyService;
+import com.sincrono.model.Hockey;
+import com.sincrono.model.HockeyService;
 import com.sincrono.model.StoricoGiocateService;
 
 @Controller
@@ -30,6 +29,10 @@ import com.sincrono.model.StoricoGiocateService;
 public class ControllerAdmin {
 	@Autowired
 	AdminService nn;
+	
+	@Autowired
+	HockeyService hs;
+	
 	@Autowired
 	CustomerService as;
 	@Autowired
@@ -47,7 +50,7 @@ public class ControllerAdmin {
 	    return "gestioneadmin";
 	}
 
-	@RequestMapping(path="provacenoyz",method=RequestMethod.POST)
+	@RequestMapping(path="gestioneadmin",method=RequestMethod.POST)
 	public String getIndex(@ModelAttribute("tenebre") Admin tenebre,@ModelAttribute("csmdelete") Customer csmdelete,Model s,HttpSession sessionadmin) {
 		String a=tenebre.getEmail();
 		String pass=tenebre.getPassword();
@@ -106,11 +109,12 @@ public class ControllerAdmin {
 		}
 	
 	
-	@RequestMapping(value = "visualizzaUT", method = RequestMethod.GET)
+	@RequestMapping(value = "/visualizzaUT", method = RequestMethod.GET)
 	public String getList(Model m) {
-	List <Customer> listautenti=as.findAll();
-	m.addAttribute("lista", listautenti);
-	return "gestioneadmin";
+		List<Customer> lista=as.findAll();
+		m.addAttribute("lista", lista);
+		return "visualizzaUT"; 
 	}
-
+	
 }
+

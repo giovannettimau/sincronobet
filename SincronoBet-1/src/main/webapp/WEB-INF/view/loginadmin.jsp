@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+    <%@ page session="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +22,7 @@
 <div class="container mar-top-10" >
 <h2 class="text-center mar-top-10">Login</h2>
 <div class="container p-3">
-	<form:form action="provacenoyz" method="post" modelAttribute="tenebre" class = "formclass">
+	<form:form action="gestioneadmin" method="post" modelAttribute="tenebre" class = "formclass">
 	<div class="row">
 		<div  class = "col-4">
 			<label>Email:</label>
@@ -39,7 +40,7 @@
 	</form:form>
 
 </div>
-<h4 class="text-center mar-top-10" style = "font-family:cursive;color:red;"><i><c:out value = "${cus }" /></i></h4>
+<h4 class="text-center mar-top-10" style = "font-family:cursive;color:red;"><i><c:out value = "${cus}" /></i></h4>
 <br><br>
 </div>
 

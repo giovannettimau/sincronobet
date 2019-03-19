@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+    <%@ page session="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,22 +30,21 @@
 		<label>Password:</label>
 		<form:input class="form-control" type = "password" path="password" placeholder="Inserisci Password"/>
 	</div>
-	<c:forEach items="${cus}" var="x">
-	<c:out value = "${x}"/>
-	</c:forEach>
 	<div class = "col-2"></div>
 	<div  class = "col-2">
 		<input type="submit" class = "btn btn-success btn-primary"/>
 	</div>
 </div>
 </form:form>
+<h4 class="text-center mar-top-10" style="font-family:cursive;color:red"><i><c:out value="${cus}" /></i></h4>
+<br><br>
 </div>
 <br>
 <br>
 <br>
 <h2 class="text-center mar-top-10">Registrati</h2>
 <div class="container p-3">
-<form:form action="provace" method="post" modelAttribute="personForm" class = "formclass">
+<form:form action="registra" method="post" modelAttribute="personForm" class = "formclass">
 		<div class="row">
 			<div  class = "col-4">
 				<label>Nome:</label>
