@@ -68,7 +68,7 @@
 		
 	</c:if>
 	<c:if test="${empty giocatore}">
-		<a class="b1" href="loginutente">Login</a>
+		<a class="btn btn-success btn-sm" href="loginutente">Login</a>
 	   	
 		
 	</c:if>

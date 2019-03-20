@@ -49,10 +49,10 @@ public class Login  {
 	    return "index";
 	}
 	@RequestMapping(path="registrati",method=RequestMethod.POST)
-	public String getregistradati(@ModelAttribute("personForm") Customer personForm,Model m,Model v,Model da) {
+	public String getregistradati(@ModelAttribute("personForm") Customer personForm,Model m,Model v,Model da,HttpSession sessione) {
 		Customer nuovo=new Customer();
 		int last;
-		String msg="prova";
+		String msg="";
 		String nome=personForm.getNome();
 		String cognome=personForm.getCognome();
 		String email=personForm.getEmail();
@@ -60,8 +60,8 @@ public class Login  {
 		
 		Customer c= as.findByemail(email);
 		if(c!=null) {
-			msg="utente già registrato fai il login";
-			v.addAttribute("cus", msg);
+			msg="Utente già registrato: effettua il login";
+			v.addAttribute("registrazione", msg);
 			return "loginutente";	
 		}
 		else {
@@ -72,9 +72,13 @@ public class Login  {
 			nuovo.setEmail(email);
 			nuovo.setPassword(pass);
 			as.save(nuovo);
+			sessione.setAttribute("giocatore",nuovo);
+			Customer s =(Customer) sessione.getAttribute("giocatore");
+			
+			msg="Complimenti, hai effettuato correttamente la registrazione!";
 	
 		}
-		v.addAttribute("cus", msg);
+		v.addAttribute("registrazione", msg);
 		return "loginutente";
 			
 }

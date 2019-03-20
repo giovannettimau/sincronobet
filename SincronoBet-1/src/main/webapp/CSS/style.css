@@ -57,6 +57,14 @@
 	-moz-background-size: 100% auto;
 	-o-background-size: 100% auto;
 	 background-size: 100% auto;
+} 
+#pageprofilo{
+	
+	 background: url(https://i.pinimg.com/originals/f7/a1/c6/f7a1c6d52f622bc3b1527a0783bed92a.jpg)  no-repeat center center fixed;
+	-webkit-background-size: 100% auto;
+	-moz-background-size: 100% auto;
+	-o-background-size: 100% auto;
+	 background-size: 100% auto;
 }
 body, html{
 	height: 100%;
@@ -142,3 +150,28 @@ tbody {
 a.link_basso:hover{
 	color: white;
 }
+
+a.tabellautenti:link, a.tabellautenti:visited{
+	background-color: #28a745;
+	border-color: #28a745;
+ 	color: white;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    display: inline-block;
+    font-weight: 400;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+a.tabellautenti:hover, a.tabellautenti:active {
+  background-color: green;
+}
+

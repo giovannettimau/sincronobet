@@ -1,5 +1,7 @@
 package com.sincrono.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
@@ -96,9 +98,16 @@ public class ControllerAdmin {
 		}
 	@RequestMapping(value="index")
 	public String ritornahomepage(HttpSession sessionprova ) {
-		sessionprova.removeAttribute("giocatore");
 		return "index";
-	}	
+	}
+	
+	@RequestMapping(value="visualizzaUT", method=RequestMethod.GET)
+		public String getList(Model m) {
+		
+		List <Customer> listautenti=as.findAll();
+		m.addAttribute("lista",listautenti);
+		return "visualizzaUT";
+	}
 }
 
 

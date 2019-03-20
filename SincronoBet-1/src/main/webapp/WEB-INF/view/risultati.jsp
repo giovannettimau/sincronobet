@@ -6,6 +6,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
+
 <meta charset="ISO-8859-1">
 <title>Riepilogo</title>
 <link href="../CSS/style.css" rel="stylesheet" type="text/css">
@@ -164,16 +167,35 @@
 <br>
 <br>
 <div class="row">
-<div class="col-3"></div>
+<div class="col-4"></div>
 <div class="col-7">
-<h5 style="color:black">
-<c:if test="${not empty vincita}">
-		<c:out value="${msg}"></c:out>
-		<c:out value="${vincita}"></c:out> &nbsp; &euro;
-	</c:if>
-	</h5>
-<div class="col-2"></div>
+
+
+
+
+ 	<h5 style="color:black">
+   		<c:if test="${not empty vincita}">
+			<c:out value="${msg}"></c:out>
+			<c:out value="${vincita}"></c:out> &nbsp; &euro;
+		</c:if>
+ 	</h5>
+ 	
+ 	
+ 	
+ 	
+<div class="col-1"></div>
 </div>
 </div>
+<br>
+<form action="profilo" method="get">
+
+ <div class="row">
+ 		<div class="col-1"></div>
+ 		<div class="col-1">
+ 			<button class="btn btn-dark" type="submit">Storico</button>
+ 		</div>
+ 		<div class="col-10"></div>
+	</div>
+</form>
 </body>
 </html>

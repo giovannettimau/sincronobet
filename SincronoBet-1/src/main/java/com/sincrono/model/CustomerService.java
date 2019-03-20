@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 public interface CustomerService extends JpaRepository<Customer, Integer> { 
 	List<Customer> findBynome(final String first_name);	
 	Customer findByemail(final String email);
+	List <Customer> findAll();
 	@Query("SELECT MAX(customer_id) from Customer")
 	int getLast();
 	void deleteByemail(final String email);

@@ -14,6 +14,8 @@
 <title>Eventi sportivi HOCKEY</title>
 </head>
 <body id = "pagehockey" class = "img-fluid">
+<br>
+<br>
 <div class="container mar-top-0">
 
 <div class="container p-3">
@@ -71,9 +73,9 @@
 <div class = "row">
 <div class = "col-10"></div>
 <div class = "col-2">
-<a href="risultati" style= "color:black"><b>Riepilogo giocata</b></a><br>
-<a href="basket" style= "color:black"><b>Basket</b></a><br>
-<a href="calcio" style= "color:black"><b>Calcio</b></a>
+<a href="risultati" style= "color:limegreen"><b>Riepilogo giocata</b></a><br>
+<a href="basket" style= "color:limegreen"><b>Basket</b></a><br>
+<a href="calcio" style= "color:limegreen"><b>Calcio</b></a>
 </div>
 </div>
 </div>

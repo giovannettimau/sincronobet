@@ -24,13 +24,13 @@
 <div class="row">
 	<div  class = "col-4">
 <label>email:</label>
-<form:input class="form-control" path="email" placeholder="Inserisci Email"/>
+<form:input type="email" class="form-control" path="email" placeholder="Inserisci Email" required="required"/>
 	</div>
 
 <div  class = "col-4">
 		<label>Password:</label>
 
-	<form:input class="form-control" type = "password" path="password" placeholder="Inserisci Password"/>
+	<form:input class="form-control" type = "password" path="password" placeholder="Inserisci Password" required="required"/>
 	</div>
 <div class = "col-2"></div>
 	<div  class = "col-2">
@@ -38,8 +38,8 @@
 	</div>
 </div>
 </form:form>
-<h4 class="text-center mar-top-10" style="font-family:cursive;color:red"><i><c:out value="${cus}" /></i></h4>
-<br><br>
+<%-- <h4 class="text-center mar-top-10" style="font-family:cursive;color:red"><i><c:out value="${cus}" /></i></h4> --%>
+<!-- <br><br> -->
 </div>
 <br>
 <br>
@@ -50,11 +50,11 @@
 		<div class="row">
 			<div  class = "col-4">
 				<label>Nome:</label>
-				<form:input class="form-control" path="nome" placeholder="Inserisci Nome"/>
+				<form:input type="text" class="form-control" path="nome" pattern="[A-Za-z\s]*" placeholder="Inserisci Nome" required="required"/>
 			</div>
 			<div  class = "col-4">
 				<label>Cognome:</label>
-				<form:input class="form-control" path="cognome" placeholder="Inserisci Cognome"/>
+				<form:input type="text" class="form-control" path="cognome" pattern="[A-Za-z\s]*" placeholder="Inserisci Cognome" required="required"/>
 			</div>
 			<div class = "col-4"></div>
 		</div>
@@ -62,11 +62,11 @@
 		<div class="row">
 			<div  class = "col-4">
 				<label>Email:</label>
-				<form:input class="form-control" path="email" placeholder="Inserisci Email"/>
+				<form:input type="email" class="form-control" path="email" placeholder="Inserisci Email" required="required"/>
 			</div>
 			<div  class = "col-4">
 				<label>Password:</label>
-				<form:input class="form-control" type = "password" path="password" placeholder="Inserisci Password"/>
+				<form:input class="form-control" type = "password" path="password" placeholder="Inserisci Password" required="required"/>
 			</div>
 			<div  class = "col-2"></div>
 			<div  class = "col-2">
@@ -77,12 +77,14 @@
 			<div class="row">
 				<div  class = "col-5">
 					<label>Età:</label>
-					<input class="form-control" type="number" placeholder="Inserisci l'ètà"/>
+					<input class="form-control" type="number" min="18" placeholder="Inserisci l'ètà" required="required"/>
 					<small class="form-text" style = "color: red">Attenzione: registrazione consentita solo ai maggiorenni (>18)</small>
 				</div>
 				<div  class = "col-7"></div>
 			</div>
 </form:form>
+<h4 class="text-center mar-top-10" style="font-family:cursive;color:black"><i><a href="index"><c:out value="${registrazione}" /></a></i></h4>
+<br><br>
 </div>
 <br>
 <br>

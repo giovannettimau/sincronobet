@@ -20,10 +20,13 @@
 		<p align="right"><a href="loginutente" style="color: limegreen">Login Utente</a>
 	</c:if>
 </c:if>
+
+
 <c:if test="${not empty giocatore}">
 <form style="color:limegreen;">
 
-<td>Welcome:  ${sessionScope.giocatore.getNome()}</td>
+<td>Welcome &nbsp; ${sessionScope.giocatore.getNome()}</td>
+<p align ="right"><a href="profilo" Style="color: limegreen">Storico</a>
 </form>
 </c:if>
 <c:if test="${empty admin }">

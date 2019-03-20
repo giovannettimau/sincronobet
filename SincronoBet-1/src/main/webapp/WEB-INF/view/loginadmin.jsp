@@ -25,11 +25,11 @@
 <div class="row">
 		<div  class = "col-4">
 			<label>Email:</label>
-			<form:input class="form-control" path="email" placeholder="Inserisci Email" id="email"/>
+			<form:input type="email" class="form-control" path="email" placeholder="Inserisci Email" id="email" required="required"/>
 		</div>
 		<div  class = "col-4">
 			<label>Password:</label>
-			<form:input class="form-control" type = "password" path="password" placeholder="Inserisci Password"/>
+			<form:input class="form-control" type = "password" path="password" placeholder="Inserisci Password" required="required"/>
 		</div>
 		<div class = "col-2"></div>
 		<div  class = "col-2">
