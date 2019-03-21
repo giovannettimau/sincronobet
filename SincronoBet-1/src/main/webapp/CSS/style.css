@@ -175,3 +175,48 @@ a.tabellautenti:hover, a.tabellautenti:active {
   background-color: green;
 }
 
+.welcome{
+	
+	
+	background-color:#800000;
+	border:1px solid lightgrey;
+	cursor:default;
+}
+
+.btn-static:active {
+	 -moz-box-shadow: inset 0 0 0px white;
+	 -webkit-box-shadow: inset 0 0 0px white;
+	 box-shadow: inset 0 0 0px white;
+}
+
+.block{
+	
+	text-align:center;
+	vertical-align:middle;
+	
+	
+}
+
+.circle{
+	
+	background:white;
+	border-radius:200px;
+	color:black;
+	height:200px;
+	font-weight:bold;
+	width:200px;
+	display:table;
+	margin:20px auto;
+	
+}
+
+.circle p{
+	
+	vertical-align:middle;
+	display:table-cell;
+	
+}
+
+
+
+

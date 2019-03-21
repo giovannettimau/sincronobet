@@ -49,13 +49,13 @@
 	<form action="sbasket1" id=${ y.quota1 } method="get"> 
 	<input form= ${ y.quota1} type="hidden" name="prova1" value=${ y.quota1}>
 	<input form= ${ y.quota1 } type="hidden" name="prova1id" value=${ y.id}>
-		<button form=${ y.quota1 } class="btn btn-success btn-sm" type="submit" > ${y.quota1}</button>
+		<button form=${ y.quota1 } class="btn btn-success btn-sm" style="width:40px" type="submit" > ${y.quota1}</button>
 		</form>
 		&nbsp;
 		<form action="sbasket2" id=${ y.quota2} method="get"> 
 		<input form= ${ y.quota2 } type="hidden" name="prova2" value=${ y.quota2}>
 		<input form= ${ y.quota2 } type="hidden" name="prova2id" value=${ y.id}>
-		<button form=${ y.quota2 } class="btn btn-success btn-sm" type="submit" > ${y.quota2}</button>
+		<button form=${ y.quota2 } class="btn btn-success btn-sm" style="width:40px" type="submit" > ${y.quota2}</button>
 		</form>
 	</c:if>
 	<c:if test="${empty giocatore}">
@@ -77,9 +77,12 @@
 <div class = "row">
 <div class = "col-10"></div>
 <div class = "col-2">
+<c:if test="${not empty giocatore}">
 <a href="risultati" style= "color:#660000"><b>Riepilogo giocata</b></a><br>
+</c:if>
 <a href="hockey" style= "color:#660000"><b>Hockey</b></a><br>
-<a href="calcio" style= "color:#660000"><b>Calcio</b></a>
+<a href="calcio" style= "color:#660000"><b>Calcio</b></a><br>
+<a href="index" style= "color:#660000"><b>Home page</b></a>
 </div>
 </div>
 </div>

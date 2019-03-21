@@ -38,8 +38,8 @@
 	</div>
 </div>
 </form:form>
-<%-- <h4 class="text-center mar-top-10" style="font-family:cursive;color:red"><i><c:out value="${cus}" /></i></h4> --%>
-<!-- <br><br> -->
+<h4 class="text-center mar-top-10" style="font-family:cursive;color:red"><i><c:out value="${cus}" /></i></h4>
+<br><br>
 </div>
 <br>
 <br>

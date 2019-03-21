@@ -11,9 +11,19 @@
 	crossorigin="anonymous">
 <link href="../CSS/style.css" rel="stylesheet" type="text/css">
 <meta charset="ISO-8859-1">
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+<!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
+<!--   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+
 <title>Storico Giocate</title>
 </head>
 <body id = "pageprofilo" class = "img-fluid">
+<br>
+<br>
+<br>
+<br>
 <div  class="container mar-top-0">
 
 <div class="container p-3">
@@ -44,6 +54,8 @@
 		<button form=${ x.storico_giocate_id } class="btn btn-success btn-sm" type="submit" > Dettagli</button>
 		</form>
 		</div>
+		
+		
 	</td>	
 </tr>
 </c:forEach>
@@ -78,5 +90,31 @@
 </c:if>
 </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<form action="homepage" method="get">
+
+ <div class="row">
+ 		<div class="col-10"></div>
+ 		<div class="col-1">
+ 			 <button class="btn btn-dark" class="btn btn-sm" type="submit">HOME PAGE</button>
+ 		</div>
+ 		<div class="col-1"></div>
+	</div>
+</form>
+
 </body>
 </html>

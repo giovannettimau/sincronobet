@@ -22,7 +22,7 @@ public class Login  {
 		String msg;
 		Customer c= as.findByemail(a);
 		if(c==null) {
-			msg="email sbagliata";
+			msg="Email errata";
 			s.addAttribute("cus", msg);
 			return "loginutente";
 		}
@@ -33,7 +33,7 @@ public class Login  {
 			return "index";	
 		}
 		else {
-			msg="psw sbagliata no bravo";
+			msg="Password errata";
 			s.addAttribute("cus", msg);
 			return "loginutente";
 		}
@@ -88,4 +88,13 @@ public class Login  {
 		model.addAttribute("personForm",new Customer());
 	    return "loginutente";
 	}
+	
+	@RequestMapping(value="index")
+	public String tornaindex(HttpSession sessione) {
+		
+		sessione.removeAttribute("vincita");
+		
+		return "index";
+	}
+	
 }

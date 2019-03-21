@@ -1,5 +1,10 @@
 package com.sincrono.controller;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -19,6 +24,7 @@ import com.sincrono.model.CustomerService;
 import com.sincrono.model.GiocataBasketService;
 import com.sincrono.model.GiocataCalcioService;
 import com.sincrono.model.GiocateHockeyService;
+import com.sincrono.model.StoricoGiocate;
 import com.sincrono.model.StoricoGiocateService;
 
 @Controller
@@ -96,8 +102,8 @@ public class ControllerAdmin {
 		sgs.deleteBysgid(id);
 		return "gestioneadmin";
 		}
-	@RequestMapping(value="index")
-	public String ritornahomepage(HttpSession sessionprova ) {
+	@RequestMapping(value="homepage")
+	public String ritornahomepage(){
 		return "index";
 	}
 	
@@ -108,6 +114,66 @@ public class ControllerAdmin {
 		m.addAttribute("lista",listautenti);
 		return "visualizzaUT";
 	}
+	
+	
+	@RequestMapping(value="statistiche", method=RequestMethod.GET)
+	public String getSaldo(Model model1) {
+		DateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+		Date date=new Date();
+		Date da=new Date();
+		Date gioco=new Date();
+		String das="2019-03-21";
+		Calendar c=Calendar.getInstance();
+		int i=c.get(Calendar.DAY_OF_WEEK)-c.getFirstDayOfWeek();
+		c.add(Calendar.DATE,-1);
+		date=c.getTime();
+		String a=sdf.format(date);
+		try {
+			date=sdf.parse(a);
+		} catch (ParseException e) {
+			
+			e.printStackTrace();
+		}
+		 java.sql.Date sql = new java.sql.Date(date.getTime());
+		double saldo=0;
+		double saldolw=0;
+		int giocate=0;
+		int giocateld=0;
+		int last=as.getLast();
+		 
+		List <StoricoGiocate>listagiocata=sgs.findAll();
+		giocate=listagiocata.size();
+		for(int j=0;j<listagiocata.size();j++) {
+			 saldo=saldo+listagiocata.get(j).getSaldo();
+			 Date d=(listagiocata.get(j).getData());
+			 if(d!=null) {
+			 das=sdf.format(d);
+			 }
+			 try {
+					gioco=sdf.parse(das);
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			 java.sql.Date sql2 = new java.sql.Date(gioco.getTime());
+			 if(sql2.after(sql)) {
+				 saldolw=saldolw+listagiocata.get(j).getSaldo();
+				 giocateld=giocateld+1;
+				 
+				 
+			 }
+			
+		}
+		
+		model1.addAttribute("saldo",-saldo);
+		model1.addAttribute("saldold",-saldolw);
+		model1.addAttribute("giocatetot",giocate);
+		model1.addAttribute("giocateld",giocateld);
+	return "statistiche";
+	}
+	
+	
+	
 }
 
 

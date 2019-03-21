@@ -51,19 +51,19 @@
 	<form action="scalcio1" id=${ x.quota1 } method="get"> 
 	<input form= ${ x.quota1} type="hidden" name="prova1" value=${ x.quota1}>
 	<input form= ${ x.quota1 } type="hidden" name="prova1id" value=${ x.id}>
-		<button form=${ x.quota1 } class="btn btn-success btn-sm" type="submit" > ${x.quota1}</button>
+		<button form=${ x.quota1 } class="btn btn-success btn-sm" style="width:40px" type="submit" > ${x.quota1}</button>
 		</form>
 		&nbsp;
 		<form action="scalciox" id=${ x.quotax} method="get"> 
 		<input form= ${ x.quotax } type="hidden" name="provax" value=${ x.quotax}>
 		<input form= ${ x.quotax } type="hidden" name="provaxid" value=${ x.id}>
-		<button form=${ x.quotax } class="btn btn-success btn-sm" type="submit" > ${x.quotax}</button>
+		<button form=${ x.quotax } class="btn btn-success btn-sm" style="width:40px" type="submit" > ${x.quotax}</button>
 		</form>
 		&nbsp;
 			<form action="scalcio2" id=${ x.quota2 } method="get"> 
 	<input form= ${ x.quota2 } type="hidden" name="prova2" value=${ x.quota2}>
 		<input form= ${ x.quota2} type="hidden" name="prova2id" value=${ x.id}>
-		<button form=${ x.quota2} class="btn btn-success btn-sm" type="submit" > ${x.quota2}</button>
+		<button form=${ x.quota2} class="btn btn-success btn-sm" style="width:40px" type="submit" > ${x.quota2}</button>
 		</form>
 		
 	</c:if>
@@ -86,9 +86,12 @@
 <div class = "row">
 <div class = "col-10"></div>
 <div class = "col-2">
-<a href="risultati" style= "color:#155612"><b>Riepilogo giocata</b></a><br>
+<c:if test="${not empty giocatore}">
+	<a href="risultati" style= "color:#155612"><b>Riepilogo giocata</b></a><br>
+</c:if>
 <a href="hockey"  style= "color:#155612"><b>Hockey</b></a><br>
-<a href="basket"  style= "color:#155612"><b>Basket</b></a>
+<a href="basket"  style= "color:#155612"><b>Basket</b></a><br>
+<a href="index"  style= "color:#155612"><b>Home page</b></a>
 </div>
 </div>
 </div>

@@ -45,13 +45,13 @@
 	<form action="shockey1" id=${ z.quota1 } method="get"> 
 	<input form= ${ z.quota1} type="hidden" name="prova1" value=${ z.quota1}>
 	<input form= ${ z.quota1 } type="hidden" name="prova1id" value=${ z.id}>
-		<button form=${ z.quota1 } class="btn btn-success btn-sm" type="submit" > ${z.quota1}</button>
+		<button form=${ z.quota1 } class="btn btn-success btn-sm" style="width:40px" type="submit" > ${z.quota1}</button>
 		</form>
 		&nbsp;
 		<form action="shockey2" id=${ z.quota2} method="get"> 
 		<input form= ${ z.quota2 } type="hidden" name="prova2" value=${ z.quota2}>
 		<input form= ${ z.quota2 } type="hidden" name="prova2id" value=${ z.id}>
-		<button form=${ z.quota2 } class="btn btn-success btn-sm" type="submit" > ${z.quota2}</button>
+		<button form=${ z.quota2 } class="btn btn-success btn-sm" style="width:40px" type="submit" > ${z.quota2}</button>
 		</form>
 	</c:if>
 	<c:if test="${empty giocatore}">
@@ -73,9 +73,12 @@
 <div class = "row">
 <div class = "col-10"></div>
 <div class = "col-2">
+<c:if test="${not empty giocatore}">
 <a href="risultati" style= "color:limegreen"><b>Riepilogo giocata</b></a><br>
+</c:if>
 <a href="basket" style= "color:limegreen"><b>Basket</b></a><br>
-<a href="calcio" style= "color:limegreen"><b>Calcio</b></a>
+<a href="calcio" style= "color:limegreen"><b>Calcio</b></a><br>
+<a href="index" style= "color:limegreen"><b>Home page</b></a>
 </div>
 </div>
 </div>

@@ -156,6 +156,8 @@ public class ControllerRiepilogo {
 		public String getgiocata(@RequestParam("puntata") double puntata,ModelMap msg,ModelMap pv,ModelMap mg,HttpSession risultati) {
 			 double quot=1;
 			 boolean vittoria = true;
+			 String vittoriavittoria="prova1";
+			 String perditaperdita="prova2";
 			 StoricoGiocate id=new StoricoGiocate();
 			 Customer utenteloggato=new Customer();
 			 utenteloggato=(Customer) risultati.getAttribute("giocatore");
@@ -214,6 +216,8 @@ public class ControllerRiepilogo {
 			}
 			if(vittoria) {
 //			System.out.println("bravo");
+			risultati.setAttribute("vittoriavittoria", vittoriavittoria);
+            risultati.removeAttribute("perditaperdita");
 			id.setPuntata(puntata);
 			id.setVincita(puntata*quot);
 			id.setSaldo(puntata*quot-puntata);
@@ -225,6 +229,8 @@ public class ControllerRiepilogo {
 			msg.addAttribute("msg",msgio);
 			}else {
 //				System.out.println("hai perso lota");
+				risultati.setAttribute("perditaperdita", perditaperdita);
+                risultati.removeAttribute("vittoriavittoria");
 				id.setPuntata(puntata);
 				id.setVincita(0);
 				id.setSaldo(-puntata);
@@ -232,12 +238,18 @@ public class ControllerRiepilogo {
 				id.setData(new Date());
 				sgs.save(id);
 				risultati.setAttribute("vincita",id.getSaldo());
-				String msgio="MI DISPIACE HAI PERSO, RITENTA!!!";
+				String msgio="MI DISPIACE HAI PERSO: ";
 				msg.addAttribute("msg",msgio);
 			
 			}
 			risultati.removeAttribute("risultati");
 			return "risultati";
+		}
+		
+		@RequestMapping(value="giocadinuovo")
+		public String giocadinuvo() {
+			return "index";
+			
 		}
 		
 		

@@ -104,7 +104,7 @@
 	 <i>Quota totale:</i></div>
 <div class="col-2"></div>
 <div class="col-2"> <i><fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${quota}">
-	</fmt:formatNumber></i></div>
+	</fmt:formatNumber></i>&euro;</div>
 	<div class="col-4"></div>
 
 	
@@ -115,8 +115,10 @@
 	<div class="col-2">	</div>
 		<div class="col-5">	
 	<form action="simula" id=${ quota} method="get"> 
-   Puntata: <input type="text" required="true" name="puntata" placeholder="&euro;"> &nbsp;
-  <input form= ${ quota } type="hidden" name="quota" value=${ quota}>
+   Puntata: <input type="text" required="true" pattern="^[^-][0-9]*" name="puntata" placeholder="&euro;"> &nbsp;
+  	<c:if test="${not empty risultati}">
+  		<input form= ${ quota } type="hidden" name="quota" value=${ quota}>
+  	</c:if>
 			<button form=${ quota } type="submit" class="btn btn-success btn-sm">Simula</button>
 			
 </form>
@@ -134,22 +136,98 @@
 	<c:if test="${not empty possvinc}">
 		Possibile vincita: <c:out value="${possvinc}"></c:out>&nbsp; &euro;
 	</c:if></h4>
-</div>
-</div>
+
+
 <br>
 <br>
 <div class="row">
 <div class="col-7"></div>
 <div class="col-5">
 <form action="gioca" method="get"> 
-   Puntata: <input type="text" required="true" name="puntata" placeholder="&euro;"> &nbsp;
+   Puntata: <input type="text" required="true" pattern="^[^-][0-9]*" name="puntata" placeholder="&euro;"> &nbsp;
 			<button class="btn btn-success btn-sm" type="submit" >Gioca</button>
 			
 </form>
 <!-- <div class="col-1"></div> -->
 </div>
 </div>
+<div class="row">
+	<div class="col-7"></div>
+	<div class="col-4">
+	 <p style="margin-inline-start:20%"><small class="form-text" style = "color: red">Inserire decimali separati dal punto</small></p></div>
+	
+	<div class="col-1">	</div>
+	</div>
+	
 <br>
+<br>
+<div class="row">
+<div class="col-2"></div>
+<div class="col-8">
+
+	<h5 class="text-center" style="color:black;font-family:cursive;">
+   		<c:if test="${not empty vincita}">
+   			<c:if test="${not empty perditaperdita}">
+				<c:out value="${msg}"></c:out>
+				<c:out value="${vincita}"></c:out> &nbsp; &euro;
+				<br>
+			    <br>
+			    	<div class="row">
+			    		<div class="col-3"></div>
+			    		<div class="col-6 text-center">
+			    		
+			    		
+			    			<img src="https://media.tenor.com/images/6e44c679370ef4671eb53851e7f8c13d/tenor.gif">
+			    		
+			    		
+			    		</div>
+			    		<div class="col-3"></div>
+			    	
+			    	
+			    	</div>
+			  </c:if>
+			  	<c:if test="${not empty vittoriavittoria}">
+				<c:out value="${msg}"></c:out>
+				<c:out value="${vincita}"></c:out> &nbsp; &euro;
+				<br>
+			    <br>
+			    	<div class="row">
+			    		<div class="col-3"></div>
+			    		<div class="col-6 text-center">
+			    		
+			    		
+			    			<img src="https://media.tenor.com/images/6e44c679370ef4671eb53851e7f8c13d/tenor.gif">
+			    		
+			    		
+			    		</div>
+			    		<div class="col-3"></div>
+			    	
+			    	
+			    	</div>
+			  </c:if>
+			    
+			   			    			    			    
+			<form action="giocadinuovo" method="get">
+				<button class="btn btn-outline-warning" class="btn btn-small" type="submit">Scommetti ancora</button>
+			</form>
+		</c:if>
+ 	</h5>
+</div>	
+<div class="col-2"></div>
+</div>
+<br>
+<br>
+<form action="profilo" method="get">
+
+ <div class="row">
+ 		<div class="col-1"></div>
+ 		<div class="col-1">
+ 			<button class="btn btn-dark" type="submit">Storico</button>
+ 		</div>
+ 		<div class="col-10"></div>
+	</div>
+	</form>
+	
 <br>
 <br>
 <br>
@@ -164,38 +242,7 @@
  		<div class="col-1"></div>
 	</div>
 </form>
-<br>
-<br>
-<div class="row">
-<div class="col-4"></div>
-<div class="col-7">
-
-
-
-
- 	<h5 style="color:black">
-   		<c:if test="${not empty vincita}">
-			<c:out value="${msg}"></c:out>
-			<c:out value="${vincita}"></c:out> &nbsp; &euro;
-		</c:if>
- 	</h5>
- 	
- 	
- 	
- 	
-<div class="col-1"></div>
 </div>
 </div>
-<br>
-<form action="profilo" method="get">
-
- <div class="row">
- 		<div class="col-1"></div>
- 		<div class="col-1">
- 			<button class="btn btn-dark" type="submit">Storico</button>
- 		</div>
- 		<div class="col-10"></div>
-	</div>
-</form>
 </body>
 </html>
