@@ -207,6 +207,8 @@ a.tabellautenti:hover, a.tabellautenti:active {
 	width:200px;
 	display:table;
 	margin:20px auto;
+	opacity:0.7;
+	border:solid;
 	
 }
 
@@ -215,8 +217,56 @@ a.tabellautenti:hover, a.tabellautenti:active {
 	vertical-align:middle;
 	display:table-cell;
 	
+	
 }
 
+.shadow{
+	
+	text-shadow: 2px 2px 40px limegreen;
+}
 
+.shadow1{
+	
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+p.ombravin {
+  box-shadow:  10px  10px 5px #264d00,
+              -10px -10px 5px #264d00,
+               10px -10px 5px #264d00,
+              -10px  10px 5px #264d00;
+}
+
+p.ombraper {
+  box-shadow:  10px  10px 5px #4d0000,
+              -10px -10px 5px #4d0000,
+               10px -10px 5px #4d0000,
+              -10px  10px 5px #4d0000;
+}
+
+.bottonelogout{
+	
+	border-color:#800000;
+	color:white;
+	
+}
+
+button.bottonelogout:hover{
+	
+	background-color:#800000;
+	
+}
+
+.modal-body .form-horizontal .col-sm-2,
+.modal-body .form-horizontal .col-sm-10 {
+    width: 100%
+}
+
+.modal-body .form-horizontal .control-label {
+    text-align: left;
+}
+.modal-body .form-horizontal .col-sm-offset-2 {
+    margin-left: 15px;
+}
 
 

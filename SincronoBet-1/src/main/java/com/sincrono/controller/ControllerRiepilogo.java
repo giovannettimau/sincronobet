@@ -59,13 +59,13 @@ public class ControllerRiepilogo {
 		ArrayList<Schedina> nuova=new ArrayList();
 		ArrayList<Riepilogo> riepi=new ArrayList();
 		nuova=(ArrayList<Schedina>) risultatip.getAttribute("gioc");
-//		System.out.println(nuova.get(0).getRisultato());
+
 		quotatotale=1;
+		
+		if(nuova != null) {
+		
 		for(int j=0;j<nuova.size();j++) {
 			System.out.println(nuova.get(j).getId());
-//			System.out.println(nuova.get(j).getRisultato());
-//			System.out.println(nuova.get(j).getQuota());
-//			System.out.println(nuova.get(j).getTiposport());
 			Riepilogo uno=new Riepilogo();
 			int ids=nuova.get(j).getId();
 			String sport=nuova.get(j).getTiposport();
@@ -98,8 +98,13 @@ public class ControllerRiepilogo {
 		model.addAttribute("quota",quotatotale);
 		ses.addAttribute("quota2", quotatotale);
 		return "risultati";
+		}
+		else {
+			
+			return "risultati";
+			
+		}
 	}
-
 	
 	@RequestMapping(value="rimuovi",method = RequestMethod.GET)
 	public String rimuovigiocata(@RequestParam("indice") int indice,ModelMap model,HttpSession risultati,ModelMap ses) {

@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sincrono.model.Admin;
 import com.sincrono.model.Customer;
@@ -96,5 +97,19 @@ public class Login  {
 		
 		return "index";
 	}
+	
+	
+//	@RequestMapping(value="reset",method = RequestMethod.POST)
+//		
+//		public String resetpass(@RequestParam("newmail") String newmail) {
+//		
+//		System.out.println(newmail);
+//		
+//		return "index";
+//		
+//		
+//	}
+	
+	
 	
 }

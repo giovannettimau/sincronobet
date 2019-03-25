@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/png" href="../IMG/trophy-football-camp-icon.png">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -19,15 +20,15 @@
 <div class="container mar-top-0">
 
 <div class="container p-3">
-<table class="table-bordered table-striped" style ="margin: auto;">
+<table class="table-sm table-striped" style ="margin: auto;">
 	<thead class="table-light">
 		<tr>
-			<th class="text-center"><b>categoria</b></th>
-			<th class="text-center"><b>squadraA</b></th>
-			<th class="text-center"><b>squadraB</b></th>
-			<th class="text-center"><b>quota1</b></th>
-			<th class="text-center"><b>quota2</b></th>
-			<th class="text-center"><b>gioca</b></th>
+			<th><b>categoria</b></th>
+			<th><b>squadraA</b></th>
+			<th><b>squadraB</b></th>
+			<th><b>quota1</b></th>
+			<th><b>quota2</b></th>
+			<th><b>gioca</b></th>
 		</tr>
 	</thead>
 <c:forEach items="${attH}" var="z">

@@ -6,6 +6,50 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/png" href="../IMG/trophy-football-camp-icon.png">
+
+
+<style type "text/css">
+
+.blink {
+	-webkit-animation: blink .75s linear infinite;
+	-moz-animation: blink .75s linear infinite;
+	-ms-animation: blink .75s linear infinite;
+	-o-animation: blink .75s linear infinite;
+	 animation: blink .75s linear infinite;
+}
+@-webkit-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-moz-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-ms-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@-o-keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+@keyframes blink {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	50.01% { opacity: 0; }
+	100% { opacity: 0; }
+}
+
+</style>
 
 
 
@@ -115,7 +159,7 @@
 	<div class="col-2">	</div>
 		<div class="col-5">	
 	<form action="simula" id=${ quota} method="get"> 
-   Puntata: <input type="text" required="true" pattern="^[^-][0-9]*" name="puntata" placeholder="&euro;"> &nbsp;
+   Puntata: <input type="text" required="true" pattern="^[^-][0-9.]*" name="puntata" placeholder="&euro;"> &nbsp;
   	<c:if test="${not empty risultati}">
   		<input form= ${ quota } type="hidden" name="quota" value=${ quota}>
   	</c:if>
@@ -144,7 +188,7 @@
 <div class="col-7"></div>
 <div class="col-5">
 <form action="gioca" method="get"> 
-   Puntata: <input type="text" required="true" pattern="^[^-][0-9]*" name="puntata" placeholder="&euro;"> &nbsp;
+   Puntata: <input type="text" required="true" pattern="^[^-][0-9.]*" name="puntata" placeholder="&euro;"> &nbsp;
 			<button class="btn btn-success btn-sm" type="submit" >Gioca</button>
 			
 </form>
@@ -168,18 +212,13 @@
 	<h5 class="text-center" style="color:black;font-family:cursive;">
    		<c:if test="${not empty vincita}">
    			<c:if test="${not empty perditaperdita}">
-				<c:out value="${msg}"></c:out>
+				<p class="tab blink ombraper" style="color:red;"><c:out value="${msg}"></c:out></p>
 				<c:out value="${vincita}"></c:out> &nbsp; &euro;
 				<br>
 			    <br>
 			    	<div class="row">
 			    		<div class="col-3"></div>
-			    		<div class="col-6 text-center">
-			    		
-			    		
-			    			<img src="https://media.tenor.com/images/6e44c679370ef4671eb53851e7f8c13d/tenor.gif">
-			    		
-			    		
+			    		<div class="col-6 text-center">			    					    					    					    		
 			    		</div>
 			    		<div class="col-3"></div>
 			    	
@@ -187,18 +226,13 @@
 			    	</div>
 			  </c:if>
 			  	<c:if test="${not empty vittoriavittoria}">
-				<c:out value="${msg}"></c:out>
+				<p class="tab blink ombravin" style="color:red;"><c:out value="${msg}"></c:out></p>
 				<c:out value="${vincita}"></c:out> &nbsp; &euro;
 				<br>
 			    <br>
 			    	<div class="row">
 			    		<div class="col-3"></div>
-			    		<div class="col-6 text-center">
-			    		
-			    		
-			    			<img src="https://media.tenor.com/images/6e44c679370ef4671eb53851e7f8c13d/tenor.gif">
-			    		
-			    		
+			    		<div class="col-6 text-center">			    					    			    					    		
 			    		</div>
 			    		<div class="col-3"></div>
 			    	

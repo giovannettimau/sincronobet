@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/png" href="../IMG/trophy-football-camp-icon.png">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -38,20 +39,29 @@ var num_e=document.getElementById('emailUT').value='';
 <body class = "pagesadmin">
 <br>
 <br>
-<form action="homepage" method="get">
-
- <div class="row">
- 		<div class="col-0"></div>
- 		<div class="col-1">
- 			 <button class="btn btn-outline-warning" class="btn btn-sm" type="submit">HOME PAGE</button>
- 		</div>
- 		<div class="col-11"></div>
-	</div>
-</form>
-
 <div class="container mar-top-10" >
 <h2 class="text-center mar-top-10">Benvenuto ${sessionScope.admin.getNome()}!</h2>
 <div class="container p-3">
+
+
+
+ <div class="row">
+ 	
+ 		<div class="col-0"></div>
+ 		<div class="col-1">
+ 		<form action="homepage" method="get">
+ 			 <button class="btn btn-outline-warning" class="btn btn-sm" type="submit">HOME PAGE</button>
+ 		</form>
+ 		</div>
+ 		<div class="col-1"></div>
+ 		<div class="col-1">
+ 		<form action="logout" method="get">
+ 			<button class="btn btn-outline-danger" type="submit">LOGOUT</button>
+ 		</form>
+ 		</div>
+ 		<div class="col-9"></div>
+	</div>
+<br>
   <fieldset class="border p-3">
     <legend class="w-auto">Opzioni</legend>
 		<div class = "row">
@@ -116,6 +126,8 @@ var num_e=document.getElementById('emailUT').value='';
 				</div>
 			</form:form>
 	</div>
+ 
+ 
  
 <!-- 	<div id = "visualizzaUtenti" style = "display: none"> -->
 <%-- 			<form:form action="visualizza" method="get" class = "formclass" modelAttribute="csmdelete"> --%>
