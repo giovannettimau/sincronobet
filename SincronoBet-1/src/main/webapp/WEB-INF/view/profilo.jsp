@@ -5,6 +5,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<style type="text/css">
+    .fieldset-auto-width {
+         display: inline-block;
+    }
+</style>
+
 <link rel="icon" type="image/png" href="../IMG/trophy-football-camp-icon.png">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -21,9 +28,6 @@
 <title>Storico Giocate</title>
 </head>
 <body id = "pageprofilo">
-<br>
-<br>
-<br>
 <br>
 
 <c:if test="${not empty prova }">
@@ -83,7 +87,7 @@
       
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Modal Heading</h4>
+          <h4 class="modal-title">Dettagli giocate</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
           <!-- Modal body -->
@@ -120,63 +124,41 @@
     </div>
   </div>
 
+<br>
+<div class="row">
+<div class="col-1"></div>
+<div class="col-3">
+<c:if test="${empty prova}">
 
 
+<fieldset class="border p-2 fieldset-auto-width" style="background-color:white;opacity:0.8;">
 
+	<legend></legend>
+	
+	<h5 style="color:black"><b>Saldo attuale:</b></h5>
+	<p style="color:black"><b><fmt:formatNumber value="${saldo}" pattern="0.000"/>&nbsp; &euro;</b></p>
+   
+  </fieldset>  
+  </c:if>
+  </div>
+  <div class="col-6"></div>
+	<form action="homepage" method="get">
 
-<%-- 			<c:if test="${not empty prova }"> --%>
-			
-<!-- 				<table class="table-bordered table-striped" style ="margin: auto;"> -->
-<!-- 				<thead class="table-light"> -->
-<!-- 				<tr> -->
-<!-- 					<th class="text-center"><b>SquadraA</b></th> -->
-<!-- 					<th class="text-center"><b>SquadraB</b></th> -->
-<!-- 					<th class="text-center"><b>Risultato giocato</b></th> -->
-<!-- 					<th class="text-center"><b>PunteggioA</b></th> -->
-<!-- 					<th class="text-center"><b>PunteggioB</b></th> -->
-
-<!-- 				</tr> -->
-<!-- 				</thead> -->
-<%-- 				<c:forEach items="${prova}" var="z"> --%>
-
-	 
-<!-- 				<tr> -->
-	 
-<%-- 				<td>${z.squadraA}</td> --%>
-<%-- 				<td>${z.squadraB}</td> --%>
-<%-- 				<td>${z.risultatoGiocato}</td> --%>
-<%-- 				<td>${z.p1}</td> --%>
-<%-- 				<td>${z.p2}</td> --%>
-<!-- 				</tr> -->
-<%-- 				</c:forEach> --%>
-<!-- 				</table> -->
-<%-- 		</c:if> --%>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<form action="homepage" method="get">
-
- <div class="row">
- 		<div class="col-10"></div>
+ 
+ 		
  		<div class="col-1">
  			 <button class="btn btn-dark" class="btn btn-sm" type="submit">HOME PAGE</button>
  		</div>
- 		<div class="col-1"></div>
-	</div>
+ 		
+	
 </form>
+<div class="col-1"></div>
 </div>
 </div>
+</div>
+
+<%
+		session.removeAttribute("prova");
+%>
 </body>
 </html>

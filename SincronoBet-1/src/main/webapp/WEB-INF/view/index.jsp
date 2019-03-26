@@ -43,7 +43,7 @@
 <br>
 <c:if test="${empty giocatore}">
 	<c:if test="${empty admin }">
-		<p align="right"><a href="loginutente" style="color: limegreen">Login Utente</a>
+		<p align="right"><a href="loginutente" style="color: limegreen"><b>Login Utente</b></a>
 	</c:if>
 </c:if>
 
@@ -60,7 +60,7 @@
 <c:if test="${empty admin }">
 	<c:if test="${empty giocatore }">
 	
-	 &nbsp&nbsp<a href="loginadmin" style="color: limegreen">Login Admin</a>
+	 &nbsp&nbsp<a href="loginadmin" style="color: limegreen"><b>Login Admin</b></a>
 	
 </c:if>
 </c:if>

@@ -22,7 +22,7 @@ import com.sincrono.model.CustomerService;
 import com.sincrono.model.MailService;
 
 
-@RestController
+@Controller
 public class MailController {
 
 	@Autowired
@@ -33,9 +33,9 @@ public class MailController {
 	CustomerService as;
 	
 	@RequestMapping(value="reset", method = RequestMethod.POST )
-	public String send(@ModelAttribute("personForm") Customer g, @RequestParam("newmail") String newmail, HttpSession msgsession, HttpServletResponse response) {
+	public String send(@ModelAttribute("personForm") Customer g, @RequestParam("newmail") String newmail, HttpSession msgsession, HttpServletResponse response, HttpServletRequest req) {
 	
-		
+		String msg="";
 		
 		/*
 		 *Creazione Utente che riceve la mail grazie alla classe User instanziata precedentemente
@@ -45,7 +45,10 @@ public class MailController {
 		
 		if(c==null) {
 			
-			return "Inserisci una mail valida";
+			msg="email non valida";
+			req.getSession().setAttribute("msg", msg);
+			
+			return "redirect:loginutente";
 		
 		}
 		
@@ -74,9 +77,10 @@ public class MailController {
 		}
 		
 						
-		
-	
-		return "Hai ricevuto una mail con la nuova password";
+		msg="password cambiata con successo";
+		req.getSession().setAttribute("msg", msg);
+	 
+		return "redirect:loginutente";
 	}
 
 }

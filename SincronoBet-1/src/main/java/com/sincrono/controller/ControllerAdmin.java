@@ -107,14 +107,12 @@ public class ControllerAdmin {
 		return "index";
 	}
 	
-	@RequestMapping(value="visualizzaUT", method=RequestMethod.GET)
-		public String getList(Model m) {
-		
-		List <Customer> listautenti=as.findAll();
-		m.addAttribute("lista",listautenti);
-		return "visualizzaUT";
-	}
-	
+	@RequestMapping(value="visualizza", method=RequestMethod.GET)
+	public String getList(@ModelAttribute("csmdelete") Customer csmdelete, Model m) {
+	List <Customer> listautenti=as.findAll();
+	m.addAttribute("lista",listautenti);
+	return "gestioneadmin";
+}
 	
 	@RequestMapping(value="statistiche", method=RequestMethod.GET)
 	public String getSaldo(Model model1) {

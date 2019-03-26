@@ -32,7 +32,7 @@
 		        <div class="col-2"></div>
 		        <div class="col-md-4 block">
 		            <div class="circle">
-		                <p style="font-family:cursive;">Bilancio ultimo giorno: <fmt:formatNumber value="${saldo}" maxFractionDigits="3"/> &euro;</p>
+		                <p style="font-family:cursive;">Bilancio ultimo giorno: <fmt:formatNumber value="${saldold}" maxFractionDigits="3"/> &euro;</p>
 		            </div>
 		        </div>
 		        <div class="col-1"></div>

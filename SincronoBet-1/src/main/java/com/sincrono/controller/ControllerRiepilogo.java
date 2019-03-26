@@ -114,12 +114,9 @@ public class ControllerRiepilogo {
 		 
 		rimuovi=(ArrayList<Riepilogo>) risultati.getAttribute("risultati");
 		double decremento=nuova.get(indice).getQuota();
-//		try {
+
 		rimuovi.remove(indice);
-//		}
-//		catch(IndexOutOfBoundsException e) {
-//			return "risultati";
-//		}
+		
 		quotatotale=quotatotale/decremento;
 		nuova.remove(indice);
 		
@@ -153,9 +150,22 @@ public class ControllerRiepilogo {
 		return "risultati";
 	}
 	  @RequestMapping(value="logout", method = RequestMethod.GET)
-      public String logout(HttpSession session) {
-        session.invalidate();
-        return "index";
+      public String logout(HttpSession risultati) {
+		  
+		  if(risultati.getAttribute("gioc")!=null) {
+			  ArrayList<Riepilogo> rimuovi=new ArrayList();
+			  ArrayList<Schedina> nuova=new ArrayList();
+			  nuova=(ArrayList<Schedina>) risultati.getAttribute("gioc");
+			  rimuovi=(ArrayList<Riepilogo>) risultati.getAttribute("risultati");
+			  rimuovi.clear();
+			  nuova.clear();
+			  risultati.setAttribute("risultati",rimuovi);
+			  risultati.setAttribute("gioc",nuova);
+		  }
+			  
+		  
+        risultati.invalidate();
+        return "redirect:index";
       }
 		@RequestMapping(value="gioca")
 		public String getgiocata(@RequestParam("puntata") double puntata,ModelMap msg,ModelMap pv,ModelMap mg,HttpSession risultati) {
@@ -252,8 +262,12 @@ public class ControllerRiepilogo {
 		}
 		
 		@RequestMapping(value="giocadinuovo")
-		public String giocadinuvo() {
+		public String giocadinuvo(HttpSession risultati) {
+			
+			risultati.removeAttribute("vincita");
+			
 			return "index";
+			
 			
 		}
 		

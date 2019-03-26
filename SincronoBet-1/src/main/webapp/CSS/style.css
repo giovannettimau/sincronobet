@@ -9,7 +9,7 @@
 }
 
 #pagerisultati{
-	background: url(https://wallpapers-house.com/data/out/5/wallpaper2you_64655.jpg) no-repeat center center fixed;
+	background: url("../IMG/risultati.jpg") no-repeat center center fixed;
 	-webkit-background-size: 100% auto;
 	-moz-background-size: 100% auto;
 	-o-background-size: 100% auto;
@@ -60,7 +60,7 @@
 } 
 #pageprofilo{
 	
-	 background: url(https://i.pinimg.com/originals/f7/a1/c6/f7a1c6d52f622bc3b1527a0783bed92a.jpg)  no-repeat center center fixed;
+	 background: url(https://images4.alphacoders.com/879/87918.jpg)  no-repeat center center fixed;
 	-webkit-background-size: 100% auto;
 	-moz-background-size: 100% auto;
 	-o-background-size: 100% auto;

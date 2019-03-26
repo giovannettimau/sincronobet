@@ -70,6 +70,8 @@ public class ControllerGiocatore {
 			saldototale=saldototale+utente.get(j).getSaldo();
 		}
 		risultati.setAttribute("utente",utente);
+		model.addAttribute("saldo",saldototale);
+		
 		return "profilo";
 		
 		
@@ -121,7 +123,7 @@ public class ControllerGiocatore {
 			dettagli.add(pass);
 		}
 		risultati.setAttribute("prova",dettagli);
-		return "profilo";
+		return "redirect:profilo";
 	}
 
 }

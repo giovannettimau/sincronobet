@@ -99,16 +99,7 @@ public class Login  {
 	}
 	
 	
-//	@RequestMapping(value="reset",method = RequestMethod.POST)
-//		
-//		public String resetpass(@RequestParam("newmail") String newmail) {
-//		
-//		System.out.println(newmail);
-//		
-//		return "index";
-//		
-//		
-//	}
+
 	
 	
 	

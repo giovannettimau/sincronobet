@@ -21,9 +21,29 @@
 <title>Login utente</title>
 </head>
 
+<h4>
+<%
 
+	HttpSession session=request.getSession();
+	
+
+	
+	String msg=(String)session.getAttribute("msg");	
+	if(msg!=null)
+
+	out.println(msg);
+	
+	session.removeAttribute("msg");
+
+%>
+</h4>
+
+
+	
+	
 
 <body id="pageloginutente">
+
 
 <div class="container mar-top-10" >
 <h2 class="text-center mar-top-10">Login</h2>
@@ -62,7 +82,7 @@
         <div class="modal-content">
             <!-- Modal Header -->
             <div class="modal-header">               
-                <h4 class="modal-title" id="myModalLabel">Reset your password</h4>               
+                <h4 class="modal-title" id="myModalLabel">Reset password</h4>               
             </div>           
             <!-- Modal Body -->
             <div class="modal-body">               
@@ -76,14 +96,14 @@
                   </div>                                   
                   <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" class="btn btn-default">Generate new password</button>
+                      <button type="submit" class="btn btn-default">Genera nuova password</button>
                     </div>
                   </div>
                 </form>                 
             </div>            
             <!-- Modal Footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>                                        
+                <button type="button" class="btn btn-default" data-dismiss="modal">Chiudi</button>                                        
             </div>
         </div>
     </div>
