@@ -128,7 +128,7 @@
 	<div class="col-5">
 	<form>
   <fieldset class="border p-2">
-    <legend>Informazioni account:</legend>
+    <legend><i>Informazioni account:</i></legend>
    <p> <b>Nome:</b> ${sessionScope.giocatore.getNome()} 
    		<br>
     <b>Email:</b> ${sessionScope.giocatore.getEmail()}</p>
@@ -158,7 +158,7 @@
 	</div>
 	<div class="col-2">	</div>
 	
-		<c:if test="${not empty quota2}">
+		<c:if test="${not empty quota}">
 		
 		<div class="col-5">	
 	<form action="simula" id=${ quota} method="get"> 
@@ -174,7 +174,7 @@
 	</c:if>
 	</div>
 	
-	<c:if test="${not empty quota2}">
+	<c:if test="${not empty quota}">
 	
 	<div class="row">
 	<div class="col-7"></div>
@@ -192,7 +192,7 @@
 
 <br>
 <br>
-<c:if test="${not empty quota2}">
+<c:if test="${not empty quota}">
 <div class="row">
 <div class="col-7"></div>
 <div class="col-5">
@@ -205,7 +205,7 @@
 </div>
 </div>
 </c:if>
-<c:if test="${not empty quota2}">
+<c:if test="${not empty quota}">
 <div class="row">
 	<div class="col-7"></div>
 	<div class="col-4">
@@ -237,7 +237,7 @@
 			    	</div>
 			  </c:if>
 			  	<c:if test="${not empty vittoriavittoria}">
-				<p class="tab blink ombravin" style="color:red;"><c:out value="${msg}"></c:out></p>
+				<p class="tab blink ombravin" style="color:limegreen;"><c:out value="${msg}"></c:out></p>
 				<c:out value="${vincita}"></c:out> &nbsp; &euro;
 				<br>
 			    <br>
@@ -267,7 +267,7 @@
  <div class="row">
  		<div class="col-1"></div>
  		<div class="col-1">
- 			<button class="btn btn-dark" type="submit">Storico</button>
+ 			<button class="btn btn-dark" type="submit">PROFILO</button>
  		</div>
  		<div class="col-10"></div>
 	</div>

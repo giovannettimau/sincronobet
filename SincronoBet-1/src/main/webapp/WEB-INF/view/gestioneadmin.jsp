@@ -38,7 +38,17 @@ function VisualizzaSchermataPrincipale(){
 	//document.getElementById('visualizzaUtenti').style.display = "none";
 }
 
-// 	var num_e=document.getElementById('emailUT').value='';
+$(function(){
+	
+	$("#input").keypress(function(event){
+		
+		if(event.which!=8 && event.which!=0 && (event.which<48 || event.which>57)){
+			$(".alert").html("Inserisci solo numeri!").show().fadeOut(2000);
+			return false;
+		}
+	});	
+});
+
 </script>
 
 </head>
@@ -64,7 +74,7 @@ $('#myModal').modal('show');
  		<div class="col-0"></div>
  		<div class="col-1">
  		<form action="homepage" method="get">
- 			 <button class="btn btn-outline-warning" class="btn btn-sm" type="submit">HOME PAGE</button>
+ 			 <button class="btn btn-dark" type="submit">HOME PAGE</button>
  		</form>
  		</div>
  		<div class="col-1"></div>
@@ -114,7 +124,7 @@ $('#myModal').modal('show');
 				<div class = "row">
 					<div class = "col-6">
 						<label>Email:</label>
-						<form:input type = "email" value="Inserisci email utente" onfocus="if(this.value=='inserisci email utente') this.value='';" class="form-control" path="email" placeholder = "Inserisci email utente" required="required"/>
+						<form:input type = "email" value="Inserisci email utente" onfocus="if(this.value=='Inserisci email utente') this.value='';" class="form-control" path="email" placeholder = "Inserisci email utente" required="required"/>
 					</div>
 					<div class = "col-2"></div>
 					<div class = "col-2">
@@ -129,9 +139,11 @@ $('#myModal').modal('show');
 			<form:form action="prova" method="get" modelAttribute="csmdelete" class = "formclass">
 				<div class = "row">
 					<div class = "col-6">
-						<label>Id utente:</label>
-						<form:input type = "number" class="form-control" path="customer_id" placeholder = "Inserisci id utente" required="required"/>
+						<label>Id utente:</label>						
+					<form:input type = "number" class="form-control" path="customer_id" id="input" value="Inserisci id utente" onfocus="if(this.value=='Inserisci id utente') this.value='';" placeholder = "Inserisci id utente" required="required"/>				
+					<div class="alert" style="font-weight:bold;display:none;color:red;"></div>
 					</div>
+					
 					<div class = "col-2"></div>
 					<div class = "col-2">
 						<input type="submit"  class = "btn btn-success btn-primary" value = "Elimina" onclick = "alert('Giocate eliminate.')"/>

@@ -49,4 +49,18 @@ public class MailService {
 		javaMailSender.send(mail);
 	}
 	
+	public void sendEmailAdmin(Admin admin, String text) throws MailException {
+
+
+		SimpleMailMessage mail = new SimpleMailMessage();
+		
+		mail.setTo(admin.getEmail());
+		mail.setFrom("lukepetersaint@gmail.com");
+		mail.setSubject("Messaggio per Amministratore");
+		mail.setText(text);
+
+		
+		javaMailSender.send(mail);
+	}
+	
 }

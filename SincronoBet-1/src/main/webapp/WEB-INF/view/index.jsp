@@ -52,7 +52,7 @@
 <div class="btn btn-static btn-lg welcome">
 	<form style="color:white;font-family:cursive;">
 		<td>Welcome  ${sessionScope.giocatore.getNome()}</td>&nbsp;&nbsp;<img src="../IMG/user-android-icon-48x48.png"	alt="AvatarUser" style="border-radius: 50%;">
-<p align ="left"><a href="profilo" Style="color: black">Storico</a>
+<p align ="left"><a href="profilo" Style="color: black">Profilo</a>
 </form>
 </div>
 <br>

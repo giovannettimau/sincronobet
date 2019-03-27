@@ -57,7 +57,7 @@ public class ControllerAdmin {
 		String msg;
 		Admin c= nn.findByemail(a);	
 		if(c==null) {
-			msg="email sbagliata";
+			msg="Email errata";
 			s.addAttribute("cus", msg);
 			return "loginadmin";
 		}		
@@ -67,7 +67,7 @@ public class ControllerAdmin {
 			return "gestioneadmin";
 		}
 		else {
-			msg="psw sbagliata no bravo";
+			msg="Password errata";
 		}
 		
 		s.addAttribute("cus", msg);	
@@ -172,6 +172,12 @@ public class ControllerAdmin {
 	}
 	
 
+	@RequestMapping(value="back")
+	public String back(@ModelAttribute("csmdelete") Customer csmdelete) {
+		
+		return "gestioneadmin";
+	}
+	
 	
 }
 

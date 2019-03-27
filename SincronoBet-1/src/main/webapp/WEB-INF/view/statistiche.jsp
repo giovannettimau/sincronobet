@@ -21,7 +21,17 @@
 <div class="container mar-top-10">
 <h2 class="text-center mar-top-10">Statistiche</h2>
 	<div class="container p-3">
+		<form action="back" method="get">
+		<div class="row">
+ 				<div class="col-0"></div>
 		
+		<div class="col-1">
+ 					<button  class="btn btn-dark"  type="submit">TORNA INDIETRO</button>
+ 				</div>
+ 				<div class="col-12"></div>
+ 			</div>			
+		</form>
+		<br>
 			<div class="row formclass">
 				<div class="col-1"></div>
 				<div class="col-md-4 block">
