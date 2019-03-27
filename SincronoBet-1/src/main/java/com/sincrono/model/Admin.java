@@ -18,7 +18,7 @@ import lombok.Setter;
 public class Admin {
 	
 	@Id
-	private int ammnistratore_id;
+	private int amministratore_id;
 	@Column(name="first_name")
 	private String nome;
 	@Column(name="last_name")

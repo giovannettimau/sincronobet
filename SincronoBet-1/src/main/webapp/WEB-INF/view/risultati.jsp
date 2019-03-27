@@ -157,6 +157,9 @@
 	
 	</div>
 	<div class="col-2">	</div>
+	
+		<c:if test="${not empty quota2}">
+		
 		<div class="col-5">	
 	<form action="simula" id=${ quota} method="get"> 
    Puntata: <input type="text" required="true" pattern="^[^-][0-9.]*" name="puntata" placeholder="&euro;"> &nbsp;
@@ -168,7 +171,11 @@
 </form>
 
 	</div>
+	</c:if>
 	</div>
+	
+	<c:if test="${not empty quota2}">
+	
 	<div class="row">
 	<div class="col-7"></div>
 	<div class="col-4">
@@ -176,6 +183,7 @@
 	
 	<div class="col-1">	</div>
 	</div>
+	</c:if>
 	<h4 class="text-center mar-top-10" style="font-family:cursive;color:black">
 	<c:if test="${not empty possvinc}">
 		Possibile vincita: <c:out value="${possvinc}"></c:out>&nbsp; &euro;
@@ -184,6 +192,7 @@
 
 <br>
 <br>
+<c:if test="${not empty quota2}">
 <div class="row">
 <div class="col-7"></div>
 <div class="col-5">
@@ -195,6 +204,8 @@
 <!-- <div class="col-1"></div> -->
 </div>
 </div>
+</c:if>
+<c:if test="${not empty quota2}">
 <div class="row">
 	<div class="col-7"></div>
 	<div class="col-4">
@@ -202,7 +213,7 @@
 	
 	<div class="col-1">	</div>
 	</div>
-	
+	</c:if>
 <br>
 <br>
 <div class="row">

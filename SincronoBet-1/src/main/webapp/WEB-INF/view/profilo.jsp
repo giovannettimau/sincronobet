@@ -141,7 +141,19 @@
   </fieldset>  
   </c:if>
   </div>
-  <div class="col-6"></div>
+  <div class="col-2"></div>
+  
+  		<form action="tornarisultati" method="get">
+
+ 
+ 		
+ 			<div class="col-2">
+ 			 	<button class="btn btn-dark" class="btn btn-sm" type="submit">SCOMMESSA IN CORSO</button>
+ 			</div>
+ 		
+	
+		</form>
+			<div class="col-1"></div>
 	<form action="homepage" method="get">
 
  

@@ -26,7 +26,7 @@
 <div class="row">
 		<div  class = "col-4">
 			<label>Email:</label>
-			<form:input type="email" class="form-control" path="email" placeholder="Inserisci Email" id="email" required="required"/>
+			<form:input type="email" class="form-control" path="email" placeholder="Inserisci Email" required="required"/>
 		</div>
 		<div  class = "col-4">
 			<label>Password:</label>

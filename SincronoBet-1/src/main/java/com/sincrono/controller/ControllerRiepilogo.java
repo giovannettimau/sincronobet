@@ -157,12 +157,13 @@ public class ControllerRiepilogo {
 			  ArrayList<Schedina> nuova=new ArrayList();
 			  nuova=(ArrayList<Schedina>) risultati.getAttribute("gioc");
 			  rimuovi=(ArrayList<Riepilogo>) risultati.getAttribute("risultati");
-			  rimuovi.clear();
+//			  rimuovi.clear();
 			  nuova.clear();
 			  risultati.setAttribute("risultati",rimuovi);
 			  risultati.setAttribute("gioc",nuova);
+
+	
 		  }
-			  
 		  
         risultati.invalidate();
         return "redirect:index";
@@ -230,7 +231,7 @@ public class ControllerRiepilogo {
 				}
 			}
 			if(vittoria) {
-//			System.out.println("bravo");
+
 			risultati.setAttribute("vittoriavittoria", vittoriavittoria);
             risultati.removeAttribute("perditaperdita");
 			id.setPuntata(puntata);
@@ -243,7 +244,7 @@ public class ControllerRiepilogo {
 			String msgio="COMPLIMENTI HAI VINTO!!!";
 			msg.addAttribute("msg",msgio);
 			}else {
-//				System.out.println("hai perso lota");
+
 				risultati.setAttribute("perditaperdita", perditaperdita);
                 risultati.removeAttribute("vittoriavittoria");
 				id.setPuntata(puntata);
@@ -258,13 +259,31 @@ public class ControllerRiepilogo {
 			
 			}
 			risultati.removeAttribute("risultati");
+			
 			return "risultati";
 		}
 		
 		@RequestMapping(value="giocadinuovo")
 		public String giocadinuvo(HttpSession risultati) {
 			
-			risultati.removeAttribute("vincita");
+			 if(risultati.getAttribute("gioc")!=null) {
+				  ArrayList<Riepilogo> rimuovi=new ArrayList();
+				  ArrayList<Schedina> nuova=new ArrayList();
+				  nuova=(ArrayList<Schedina>) risultati.getAttribute("gioc");
+				  rimuovi=(ArrayList<Riepilogo>) risultati.getAttribute("risultati");
+//				  rimuovi.clear();
+				  nuova.clear();
+				  risultati.setAttribute("risultati",rimuovi);
+				  risultati.setAttribute("gioc",nuova);
+
+		
+			  }
+			
+			 risultati.removeAttribute("perditaperdita");
+			 risultati.removeAttribute("vittoriavittoria");	
+			 risultati.removeAttribute("vincita");
+			 
+			 
 			
 			return "index";
 			

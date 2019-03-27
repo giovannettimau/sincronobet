@@ -73,7 +73,7 @@
 <div class="row">
 	    <div class="col-1"></div>
  		<div class="col-1">
-			<button class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModalHorizontal">Reset password</button></div>
+			<button class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModalHorizontal">Richiedi nuova password</button></div>
     <div class="col-10"></div>
 	</div>
 <div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" 

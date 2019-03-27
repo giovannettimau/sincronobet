@@ -43,7 +43,7 @@
 <br>
 <c:if test="${empty giocatore}">
 	<c:if test="${empty admin }">
-		<p align="right"><a href="loginutente" style="color: limegreen"><b>Login Utente</b></a>
+		<p align="right"><a href="loginutente" class="shadow1" style="color: limegreen"><b>Login Utente</b></a>
 	</c:if>
 </c:if>
 
@@ -60,14 +60,14 @@
 <c:if test="${empty admin }">
 	<c:if test="${empty giocatore }">
 	
-	 &nbsp&nbsp<a href="loginadmin" style="color: limegreen"><b>Login Admin</b></a>
+	 &nbsp&nbsp<a href="loginadmin" class="shadow1" style="color: limegreen"><b>Login Admin</b></a>
 	
 </c:if>
 </c:if>
 <c:if test="${empty admin }">
 	<c:if test="${not empty giocatore }">
 	<div style="display:none;">
-		 &nbsp&nbsp<a href="loginadmin" style="color: limegreen">Login Admin</a>
+		 &nbsp&nbsp<a href="loginadmin" class="shadow1" style="color: limegreen">Login Admin</a>
 	</div>
 </c:if>
 <br>
@@ -84,10 +84,7 @@
 </c:if>
 
 <c:if test="${not empty giocatore}">
-		
-	
-			
-				
+										
 			
 	<form action="logout" method="get">
 
@@ -101,10 +98,7 @@
 </form>
 </c:if>
 <c:if test="${not empty admin}">
-		
-	
-			
-				
+									
 			
 	<form action="logout" method="get">
 

@@ -126,4 +126,11 @@ public class ControllerGiocatore {
 		return "redirect:profilo";
 	}
 
+	@RequestMapping(value="tornarisultati")
+	public String tornarisultati() {
+		
+		return "risultati";
+	}
+	
+	
 }

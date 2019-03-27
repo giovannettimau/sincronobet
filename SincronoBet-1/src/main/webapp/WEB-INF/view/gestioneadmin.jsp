@@ -38,7 +38,7 @@ function VisualizzaSchermataPrincipale(){
 	//document.getElementById('visualizzaUtenti').style.display = "none";
 }
 
-	var num_e=document.getElementById('emailUT').value='';
+// 	var num_e=document.getElementById('emailUT').value='';
 </script>
 
 </head>
@@ -58,8 +58,6 @@ $('#myModal').modal('show');
 <div class="container mar-top-10" >
 <h2 class="text-center mar-top-10">Benvenuto ${sessionScope.admin.getNome()}!</h2>
 <div class="container p-3">
-
-
 
  <div class="row">
  	
@@ -116,7 +114,7 @@ $('#myModal').modal('show');
 				<div class = "row">
 					<div class = "col-6">
 						<label>Email:</label>
-						<form:input type = "email" value="Inserisci email utente" onfocus="if(this.value=='inserisci email utente') this.value='';" name = "emailUT" id ="emailUT" class="form-control" path="email" placeholder = "Inserisci email utente" required="required"/>
+						<form:input type = "email" value="Inserisci email utente" onfocus="if(this.value=='inserisci email utente') this.value='';" class="form-control" path="email" placeholder = "Inserisci email utente" required="required"/>
 					</div>
 					<div class = "col-2"></div>
 					<div class = "col-2">
@@ -128,7 +126,7 @@ $('#myModal').modal('show');
 	</div>
 	
 	<div id = "eliminaGiocataDaId" style = "display: none">
-			<form:form action="cancellagsg" method="get" modelAttribute="csmdelete" class = "formclass">
+			<form:form action="prova" method="get" modelAttribute="csmdelete" class = "formclass">
 				<div class = "row">
 					<div class = "col-6">
 						<label>Id utente:</label>
@@ -142,8 +140,7 @@ $('#myModal').modal('show');
 				</div>
 			</form:form>
 	</div>
- 
- 
+  
  
 <div class="modal fade" id="myModal">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 600px;">

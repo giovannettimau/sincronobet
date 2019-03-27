@@ -16,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sincrono.model.Admin;
 import com.sincrono.model.AdminService;
@@ -91,11 +92,11 @@ public class ControllerAdmin {
 		sessionprova.setAttribute("id",id);
 		return "gestioneadmin";
 	}
-	
+	@Transactional
 	@RequestMapping(value="prova")
-	public String prova(@ModelAttribute("csmdelete") Customer csmdelete,HttpSession sessionprova,Model s ) {
-		int id;
-		id=(int)sessionprova.getAttribute("id");	
+	public String prova(@RequestParam("customer_id") int id,@ModelAttribute("csmdelete") Customer csmdelete,HttpSession sessionprova,Model s ) {
+		
+		s.addAttribute("customer_id", id);	
 		gcs.deleteBycid(id);
 		gbs.deleteBybid(id);
 		ghs.deleteByhid(id);
