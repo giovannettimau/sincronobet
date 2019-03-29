@@ -62,7 +62,7 @@
 	</div>
 <div class = "col-2"></div>
 	<div  class = "col-2">
-		<input type="submit" class = "btn btn-success btn-primary"/>
+		<input type="submit" class = "btn btn-success btn-primary" value="Invia"/>
 	</div>
 </div>
 </form:form>
@@ -73,7 +73,7 @@
 <div class="row">
 	    <div class="col-1"></div>
  		<div class="col-1">
-			<button class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModalHorizontal">Richiedi nuova password</button></div>
+			<button class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModalHorizontal">Password dimenticata?</button></div>
     	<div class="col-10"></div>
 	</div>
 <div class="modal fade" id="myModalHorizontal" tabindex="-1" role="dialog" 
@@ -96,7 +96,7 @@
                   </div>                                   
                   <div class="form-group">
                     <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" class="btn btn-default">Genera nuova password</button>
+                      <button type="submit" class="btn btn-default">Richiedi nuova password</button>
                     </div>
                   </div>
                 </form>                 
@@ -122,7 +122,7 @@
 			</div>
 			<div  class = "col-4">
 				<label>Cognome:</label>
-				<form:input type="text" class="form-control" path="cognome" pattern="[A-Za-z\s]*" placeholder="Inserisci Cognome" required="required"/>
+				<form:input type="text" class="form-control" path="cognome" pattern="[A-Za-z\s'אטלעש]*" placeholder="Inserisci Cognome" required="required"/>
 			</div>
 			<div class = "col-4"></div>
 		</div>
@@ -138,7 +138,7 @@
 			</div>
 			<div  class = "col-2"></div>
 			<div  class = "col-2">
-				<input type="submit" class = "btn btn-success btn-primary"/>
+				<input type="submit" class = "btn btn-success btn-primary" value="Registrati"/>
 			</div>
 		</div>
 			<br><br>

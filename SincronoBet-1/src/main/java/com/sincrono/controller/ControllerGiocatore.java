@@ -70,7 +70,7 @@ public class ControllerGiocatore {
 			saldototale=saldototale+utente.get(j).getSaldo();
 		}
 		risultati.setAttribute("utente",utente);
-		model.addAttribute("saldo",saldototale);
+		risultati.setAttribute("saldo",saldototale);
 		
 		return "profilo";
 		
@@ -89,7 +89,6 @@ public class ControllerGiocatore {
 			Dettagli pass=new Dettagli();
 			int calcid=calcio.get(j).getCalcid();
 			Calcio u=new Calcio();
-			System.out.println(calcid);
 			u=cas.findByid(calcid);
 			pass.setSquadraA(u.getSquadraA());
 			pass.setSquadraB(u.getSquadraB());
@@ -123,6 +122,7 @@ public class ControllerGiocatore {
 			dettagli.add(pass);
 		}
 		risultati.setAttribute("prova",dettagli);
+	
 		return "redirect:profilo";
 	}
 

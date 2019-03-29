@@ -158,7 +158,7 @@
 	</div>
 	<div class="col-2">	</div>
 	
-		<c:if test="${not empty quota}">
+		<c:if test="${not empty risultati}">
 		
 		<div class="col-5">	
 	<form action="simula" id=${ quota} method="get"> 
@@ -174,7 +174,7 @@
 	</c:if>
 	</div>
 	
-	<c:if test="${not empty quota}">
+	<c:if test="${not empty risultati}">
 	
 	<div class="row">
 	<div class="col-7"></div>
@@ -192,7 +192,7 @@
 
 <br>
 <br>
-<c:if test="${not empty quota}">
+<c:if test="${not empty risultati}">
 <div class="row">
 <div class="col-7"></div>
 <div class="col-5">
@@ -205,7 +205,7 @@
 </div>
 </div>
 </c:if>
-<c:if test="${not empty quota}">
+<c:if test="${not empty risultati}">
 <div class="row">
 	<div class="col-7"></div>
 	<div class="col-4">
@@ -224,7 +224,7 @@
    		<c:if test="${not empty vincita}">
    			<c:if test="${not empty perditaperdita}">
 				<p class="tab blink ombraper" style="color:red;"><c:out value="${msg}"></c:out></p>
-				<c:out value="${vincita}"></c:out> &nbsp; &euro;
+				<fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${vincita}"></fmt:formatNumber> &nbsp; &euro;
 				<br>
 			    <br>
 			    	<div class="row">
@@ -238,7 +238,7 @@
 			  </c:if>
 			  	<c:if test="${not empty vittoriavittoria}">
 				<p class="tab blink ombravin" style="color:limegreen;"><c:out value="${msg}"></c:out></p>
-				<c:out value="${vincita}"></c:out> &nbsp; &euro;
+				<fmt:formatNumber type="number" maxFractionDigits="2" minFractionDigits="2" value="${vincita}"></fmt:formatNumber> &nbsp; &euro;
 				<br>
 			    <br>
 			    	<div class="row">

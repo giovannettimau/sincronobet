@@ -13,7 +13,6 @@
 <link href="../CSS/style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
@@ -32,6 +31,10 @@
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
 
 <meta charset="ISO-8859-1">
 <title>Homepage</title>
@@ -49,7 +52,7 @@
 
 
 <c:if test="${not empty giocatore}">
-<div class="btn btn-static btn-lg welcome">
+<div class="btn btn-static btn-lg" style="background-color:#800000; border:1px solid lightgrey;">
 	<form style="color:white;font-family:cursive;">
 		<td>Welcome  ${sessionScope.giocatore.getNome()}</td>&nbsp;&nbsp;<img src="../IMG/user-android-icon-48x48.png"	alt="AvatarUser" style="border-radius: 50%;">
 <p align ="left"><a href="profilo" Style="color: black">Profilo</a>
@@ -75,7 +78,7 @@
 <c:if test="${not empty admin }">
 <div>
 	<form action="gestione" style="color:white;font-family:cursive;">
-		<button class="btn btn-lg welcome" type="submit"><td>Admin  ${sessionScope.admin.getNome()}</td>&nbsp;&nbsp;<img src="../IMG/android-icon-48x48.png"	alt="AvatarAdmin" style="border-radius: 50%;">
+		<button class="btn btn-lg" style="background-color:#800000; border:1px solid lightgrey;" type="submit"><td>Admin  ${sessionScope.admin.getNome()}</td>&nbsp;&nbsp;<img src="../IMG/android-icon-48x48.png"	alt="AvatarAdmin" style="border-radius: 50%;">
 <!--     <p align ="left"><a href="gestione" Style="color: black">Gestione</a> -->
     	</button>
     </form>
@@ -91,7 +94,7 @@
  		<div class="row">
  				<div class="col-0"></div>
  				<div class="col-1">
- 					<button  class="btn btn-outline-danger bottonelogout"  type="submit">LOGOUT</button>
+ 					<button  class="btn btn-outline-danger bottonelogout" style="border-color:#dc3545;;"  type="submit">LOGOUT</button>
  				</div>
  		<div class="col-12"></div>
 		</div>
@@ -105,7 +108,7 @@
  		<div class="row">
  				<div class="col-0"></div>
  				<div class="col-1">
- 					<button  class="btn btn-outline-danger bottonelogout" type="submit">LOGOUT</button>
+ 					<button  class="btn btn-outline-danger bottonelogout" style="border-color:#dc3545;;" type="submit">LOGOUT</button>
  		</div>
  		<div class="col-12"></div>
 		</div>
@@ -128,15 +131,35 @@
 <br>
 <br>
 <br>
-<nav class="navbar navbar-default">
-	<div class="container-fluid" style = "width: 50%;">
-		<ul class="nav navbar-nav" style = "-webkit-box-orient: horizontal; flex-direction: row;">
-		  <li><a class="active" href="calcio">CALCIO</a></li>
-		  <li><a class="active" href="basket">BASKET</a></li>
-		  <li><a class="active" href="hockey">HOCKEY</a></li>
-		</ul>
-	</div>
+<!-- <nav class="navbar navbar-default"> -->
+<!-- 	<div class="container-fluid" style = "width: 50%;"> -->
+<!-- 		<ul class="nav navbar-nav" style = "-webkit-box-orient: horizontal; flex-direction: row;"> -->
+<!-- 		  <li><a class="active" href="calcio">CALCIO</a></li>									 -->
+<!-- 		  <li><a class="active" href="basket">BASKET</a></li>					 -->
+<!-- 		  <li><a class="active" href="hockey">HOCKEY</a></li>				 -->
+<!-- 		</ul> -->
+<!-- 	</div> -->
+<!-- </nav> -->
+
+<nav class="navbar bg-faded">
+  <ul class="nav navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="calcio"><i class="far fa-futbol"></i>
+Calcio<span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="basket">
+<i class="fas fa-basketball-ball"></i>
+Basket<span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="hockey"><i class="fas fa-hockey-puck"></i>
+Hockey<span class="sr-only">(current)</span></a>
+    </li>
+  </ul>
 </nav>
+
+
 <br>
 <br>
 <br>

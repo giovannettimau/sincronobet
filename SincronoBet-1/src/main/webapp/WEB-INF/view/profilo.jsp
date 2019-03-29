@@ -29,7 +29,6 @@
 </head>
 <body id = "pageprofilo">
 <br>
-
 <c:if test="${not empty prova }">
 <script>
   $(document).ready(function(){
@@ -205,9 +204,8 @@
   </div>
 
 <br>
-<div class="raw">
-<div class="col-2"></div>
-<div class="col-2"> <c:if test="${empty prova}">
+<div class="row">
+<%-- <div class="col-2"> <c:if test="${empty prova}"> --%>
 
 
 <fieldset class="border p-2 fieldset-auto-width" style="background-color:white;opacity:0.8;">
@@ -218,9 +216,9 @@
 	<p style="color:black"><b><fmt:formatNumber value="${saldo}" pattern="0.000"/>&nbsp; &euro;</b></p>
    
   </fieldset>  
-  </c:if>
+<%--   </c:if> --%>
   </div>
-  <div class="col-8"></div>
+  <div class="col-10"></div>
 </div>
 
 </div>

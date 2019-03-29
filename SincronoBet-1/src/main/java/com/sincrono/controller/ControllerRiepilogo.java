@@ -95,7 +95,7 @@ public class ControllerRiepilogo {
 			
 		}
 		
-		model.addAttribute("quota",quotatotale);
+		risultati.setAttribute("quota",quotatotale);
 		ses.addAttribute("quota2", quotatotale);
 		return "risultati";
 		}
@@ -128,7 +128,7 @@ public class ControllerRiepilogo {
 		
 		risultati.setAttribute("risultati",rimuovi);
 		risultati.setAttribute("gioc",nuova);
-		model.addAttribute("quota", quotatotale);
+		risultati.setAttribute("quota", quotatotale);
 		ses.addAttribute("quota2", quotatotale);
 		return "redirect:risultati";
 	
@@ -259,7 +259,20 @@ public class ControllerRiepilogo {
 			
 			}
 			risultati.removeAttribute("risultati");
-			
+			double quota=1;
+			risultati.setAttribute("quota",quota);
+			  if(risultati.getAttribute("gioc")!=null) {
+				  ArrayList<Riepilogo> rimuovi1=new ArrayList();
+				  ArrayList<Schedina> nuova1=new ArrayList();
+				  nuova1=(ArrayList<Schedina>) risultati.getAttribute("gioc");
+				  rimuovi1=(ArrayList<Riepilogo>) risultati.getAttribute("risultati");
+//				  rimuovi.clear();
+				  nuova.clear();
+				  risultati.setAttribute("risultati",rimuovi1);
+				  risultati.setAttribute("gioc",nuova1);
+
+		
+			  }
 			return "risultati";
 		}
 		
